@@ -1,0 +1,7 @@
+@use "astro-breadcrumbs/breadcrumbs.scss" with (
+    $color-link: darkgreen,
+    $color-hover-link: green,
+    $color-separator: darkgray,
+    $color-is-current: #333,
+    $color-is-index: olive
+);

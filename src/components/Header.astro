@@ -1,28 +1,43 @@
 ---
 import { Breadcrumbs } from "astro-breadcrumbs";
+// import "astro-breadcrumbs/breadcrumbs.scss";
+import "@/styles/astro-breadcrumbs-config.scss"
 interface Props {
-    lists: Array<ListItem>;
-}
-const { lists } = Astro.props;
-interface ListItem {
-    path?: string;
-    name: string;
+
 }
 ---
 
-<header>
-    <nav class="bg-white px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+<header class="min-h-20">
+    <nav class="bg-white px-4 py-5">
         <div
             class="flex flex-wrap justify-start items-center mx-auto max-w-screen-xl"
         >
-            <a href="/" class="flex items-center">
-                <img src="/favicon.svg" class="mr-3 h-6 sm:h-9" />
+            <a href="/" class="flex-none flex items-center">
+                <img src="/hexagon-with-left-arrow.svg"
+                    class="transition-transform duration-500 ease-in-out rotate-180 hover:-rotate-90 mr-3 h-6 sm:h-9 lg:h-12"
+                />
                 <span
-                    class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+                    id="logo"
+                    class="self-center text-2xl sm:text-4xl font-semibold whitespace-nowrap"
                     >mycelithyl-hyphae</span
                 >
             </a>
-            <Breadcrumbs></Breadcrumbs>
+            <Breadcrumbs indexText="" linkTextFormat="capitalized">
+                <svg
+                    slot="separator"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </Breadcrumbs>
             <!-- <ol class="">
                 {
                     lists.map((list: ListItem, index: number) => (
@@ -40,8 +55,10 @@ interface ListItem {
     </nav>
 </header>
 <style>
-    li:not(:first-child)::before {
-        content: ">";
-        padding: 0 4px;
+    @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+    span#logo{
+        font-family: "La Belle Aurore", cursive;
+        font-weight: 400;
+        font-style: normal;
     }
 </style>
