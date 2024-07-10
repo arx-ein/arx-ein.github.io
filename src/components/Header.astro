@@ -1,0 +1,47 @@
+---
+import { Breadcrumbs } from "astro-breadcrumbs";
+interface Props {
+    lists: Array<ListItem>;
+}
+const { lists } = Astro.props;
+interface ListItem {
+    path?: string;
+    name: string;
+}
+---
+
+<header>
+    <nav class="bg-white px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <div
+            class="flex flex-wrap justify-start items-center mx-auto max-w-screen-xl"
+        >
+            <a href="/" class="flex items-center">
+                <img src="/favicon.svg" class="mr-3 h-6 sm:h-9" />
+                <span
+                    class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+                    >mycelithyl-hyphae</span
+                >
+            </a>
+            <Breadcrumbs></Breadcrumbs>
+            <!-- <ol class="">
+                {
+                    lists.map((list: ListItem, index: number) => (
+                        <li class="inline">
+                            {lists.length - 1 !== index ? (
+                                <a href={`/${list.path}`}>{list.name}</a>
+                            ) : (
+                                <span>{list.name}</span>
+                            )}
+                        </li>
+                    ))
+                }
+            </ol> -->
+        </div>
+    </nav>
+</header>
+<style>
+    li:not(:first-child)::before {
+        content: ">";
+        padding: 0 4px;
+    }
+</style>

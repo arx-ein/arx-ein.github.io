@@ -1,7 +1,11 @@
 import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://arx-ein.github.io',
-  base: '/mycelithyl-hyphae',
-})
+  site: 'https://arx-ein.github.io/mycelithyl-hyphae/',
+  base: '',
+  integrations: [tailwind(), mdx()]
+});

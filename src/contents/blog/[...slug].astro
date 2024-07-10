@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import Main from "../../layouts/Main.astro";
+
+export async function getStaticPaths() {
+    const blogEntries = await getCollection("blog");
+    return blogEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<!-- // [...slug].astroファイル内では各スキーマの値を{[プロップス].data.[キー]}で取得できる -->
+<Main title={entry.data.title}>
+    <Content />
+</Main>
