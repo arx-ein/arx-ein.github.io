@@ -5,8 +5,8 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://arx-ein.github.io/mycelithyl-hyphae/',
-  base: '',
+  site: 'https://arx-ein.github.io',
+  base: 'mycelithyl-hyphae',
   integrations: [tailwind(), mdx()],
   devOptions: {
     // port: 3000
