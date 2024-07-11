@@ -1,11 +1,13 @@
 ---
-import Header from '../components/Header.astro'
+import Header from '@/components/Header.astro'
+import Sidebar from '@/components/Sidebar.astro'
+import Footer from '@/components/Footer.astro'
+import '@/styles/default.scss'
 interface Props {
     title: string;
 }
 
 const { title } = Astro.props;
-const li_class = "inline-block md:list-item rounded-lg mx-4 py-1 bg-green-100 text-center text-2xl";
 ---
 
 <!doctype html>
@@ -13,69 +15,23 @@ const li_class = "inline-block md:list-item rounded-lg mx-4 py-1 bg-green-100 te
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/hyphae-logo.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <title>{title} | mycelithyl-hyphae</title>
     </head>
     <body class="h-svh">
         <Header></Header>
-        <div class="md:flex justify-between">
-            <aside class="md:flex md:float-left md:w-48 overflow-y-auto">
-                <div class="hidden md:block bg-slate-50 w-16">
-                    <img src="/wavy_line.svg" class="rotate-90" />
-                    <img src="/wavy_line.svg" class="rotate-90" />
-                </div>
-                <nav class="px-4">
-                    <ul class="md:space-y-4">
-                        <li class={li_class}>About</li>
-                        <li class={li_class}>Works</li>
-                        <li class={li_class}>Blog</li>
-                    </ul>
-                </nav>
-            </aside>
-            <main class="flex justify-center">
-                <div class="w-full max-w-screen-md">
-                    <h1 class="p-8 text-center text-blue-400 underline">
+        <div class="md:flex">
+            <Sidebar></Sidebar>
+            <main class="flex grow shrink-0 justify-center">
+                <div class="w-full max-w-screen-md mx-8">
+                    <h1 class="text-center text-lime-600 text-4xl">
                         {title}
                     </h1>
                     <slot />
                 </div>
             </main>
         </div>
+        <Footer></Footer>
     </body>
 </html>
-<style is:global>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
-    aside li {
-        font-family: "Macondo", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
-    :root {
-        --sky: #aaeeee;
-        --white: white;
-        --gradient: linear-gradient(
-            to top right,
-            var(--white) 60%,
-            var(--sky)
-        );
-    }
-    html {
-        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI",
-            Roboto, "BIZ UDPGothic", "Hiragino Sans", sans-serif,
-            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
-    }
-    code {
-        font-family:
-            Menlo,
-            Monaco,
-            Consolas,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-    }
-</style>

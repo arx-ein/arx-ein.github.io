@@ -1,22 +1,18 @@
 ---
 import { Breadcrumbs } from "astro-breadcrumbs";
-// import "astro-breadcrumbs/breadcrumbs.scss";
-import "@/styles/astro-breadcrumbs-config.scss";
 interface Props {}
 ---
 
-<header class="border-0 border-b-2 border-b-black">
-    <nav class="bg-white px-4 py-2 sm:py-4">
-        <div
-            class="flex flex-wrap justify-start items-center"
-        >
-            <a href="/" class="py-2 flex-none flex items-center group">
-                <svg
-                    class="h-8 sm:h-12"
-                    fill="#000000"
-                    version="1.1"
-                    viewBox="0 0 100 80"
-                >
+<footer>
+    <div class="flex justify-end w-full px-6 pb-2 text-right">
+        <a href="#" class="group">
+            <svg
+                class="h-16"
+                fill="#000000"
+                version="1.1"
+                viewBox="0 0 80 100"
+            >
+                <g transform="rotate(-90)" transform-origin="50 50">
                     <g
                         id="hex"
                         transform="matrix(-1,0,0,1,72.738952,0)"
@@ -95,50 +91,24 @@ interface Props {}
                             id="head">
                         </path>
                     </g>
-                </svg>
-                <span
-                    id="logo"
-                    class="self-center text-2xl sm:text-4xl leading-8 whitespace-nowrap"
-                    >mycelithyl-hyphae</span
-                >
-            </a>
-            <Breadcrumbs indexText="" linkTextFormat="capitalized">
-                <svg
-                    slot="separator"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </Breadcrumbs>
-            <!-- <ol class="">
-                {
-                    lists.map((list: ListItem, index: number) => (
-                        <li class="inline">
-                            {lists.length - 1 !== index ? (
-                                <a href={`/${list.path}`}>{list.name}</a>
-                            ) : (
-                                <span>{list.name}</span>
-                            )}
-                        </li>
-                    ))
-                }
-            </ol> -->
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="border-0 border-t-2 border-t-black bg-white px-4 py-2">
+        <div class="flex flex-col sm:flex-row flex-wrap justify-between items-center text-center">
+            <small>
+                mycelithyl-hyphae: Built using GitHub Pages.
+                <a href="https://github.com/arx-ein/mycelithyl-hyphae" class="inline-block">
+                    View Repository
+                </a>
+            </small>
+            <small class="text-neutral-400">
+                &#169; 2024 Mycelithyl All Rights Reserved.
+            </small>
         </div>
-    </nav>
-</header>
+    </div>
+</footer>
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
-    span#logo {
-        font-family: "La Belle Aurore", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
+
 </style>
