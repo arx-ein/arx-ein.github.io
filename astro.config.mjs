@@ -7,5 +7,9 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: 'https://arx-ein.github.io/mycelithyl-hyphae/',
   base: '',
-  integrations: [tailwind(), mdx()]
+  integrations: [tailwind(), mdx()],
+  devOptions: {
+    // port: 3000
+    tailwindConfig: './tailwind.config.mjs',
+  },
 });
