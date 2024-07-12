@@ -2,9 +2,11 @@
 
 ## What?
 
-Mycelithylの個人サイトです。
+Mycelithylの個人サイトです。  
+サイトへのアクセスは[こちら](https://arx-ein.github.io/mycelithyl-hyphae/)
 
-Personal web page of Mycelithyl.
+Personal website of Mycelithyl.  
+Access the site through [here](https://arx-ein.github.io/mycelithyl-hyphae/)
 
 ## Who?
 
@@ -20,9 +22,11 @@ To pile up some of the outcomes of my activities.
 
 ## When?
 
-サイト制作開始: 2023/12/2, 最終更新: リポジトリの上の方とかに書いてあるかも
+サイト制作開始: 2023/12/2  
+最終更新: リポジトリの上の方とかに書いてあるかも
 
-Web site created: 2023 Dec 12, Last updated: Somewhere up there on the repository page
+Web site created: 2023 Dec 12  
+Last updated: Somewhere up there on the repository page
 
 ## Where?
 

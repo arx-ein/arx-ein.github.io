@@ -14,7 +14,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<!-- // [...slug].astroファイル内では各スキーマの値を{[プロップス].data.[キー]}で取得できる -->
 <Main title={entry.data.title}>
     <article>
         <Content />

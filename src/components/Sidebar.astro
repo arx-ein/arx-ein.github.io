@@ -2,23 +2,41 @@
 interface Props {
 
 }
-const li_class = "inline-block md:list-item md:h-16 text-2xl";
-const a_class = "leading-[4rem] hover:tracking-widest transition-all duration-100 ease-in-out";
+const menus = ["about", "things", "blog", "links"]
 ---
 
-<aside class="md:flex overflow-y-auto">
-    <div class="hidden md:block flex-none w-16 ml-2">
-        <img src="/mycelithyl-hyphae/hypha-loop.svg"/>
-        <img src="/mycelithyl-hyphae/hypha-loop.svg"/>
-        <img src="/mycelithyl-hyphae/hypha-loop.svg"/>
-        <img src="/mycelithyl-hyphae/hypha-loop.svg"/>
-    </div>
-    <nav class="md:w-24">
-        <menu>
-            <li class={li_class}><a class={a_class} href="/mycelithyl-hyphae/about">About</a></li>
-            <li class={li_class}><a class={a_class} href="/mycelithyl-hyphae/things">Things</a></li>
-            <li class={li_class}><a class={a_class} href="/mycelithyl-hyphae/blog">Blog</a></li>
-            <li class={li_class}><a class={a_class} href="/mycelithyl-hyphae/links">Links</a></li>
+<aside class="shrink-0">
+    <nav class="">
+        <menu class="flex flex-row flex-wrap justify-evenly md:block">
+            {menus.map((p) => (
+                <li class="inline-block md:list-item text-xl sm:text-2xl md:h-16 md:w-40 text-nowrap">
+                    {/* <img src="/mycelithyl-hyphae/hypha-loop.svg" class="hidden md:inline-block flex-none h-16 ml-2"/> */}
+                    <svg
+                        version="1.1" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg"
+                        class="hidden md:inline-block flex-none stroke-zinc-800 dark:stroke-zinc-200 h-16 ml-2"
+                    >
+                        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <g stroke-width="16">
+                                <path d="m400 0c-49.4 51.8 22.4 118 14.2 176-8.04 57.4-53.1 105-61.1 163-8.63 62.2-2.26 128 15.7 188 13.9 46.6 63.6 80 69.3 128 5.95 49.7 12.3 96.5-38.2 145"/>
+                                <path d="m415 166c-27.8 153-185 5.42-213 188"/>
+                                <path d="m349 395c19.5 132 241 184 288 34.3"/>
+                                <path d="m369 527c36.6 113-48.4 180-95.7 172"/>
+                            </g>
+                            <ellipse cx="638" cy="400" rx="29.4" ry="29.4" stroke-width="16" style="paint-order:stroke markers fill"/>
+                        </g>
+                    </svg>
+                    <a
+                        class="
+                            md:inline-block md:leading-[4rem]
+                            hover:tracking-widest transition-all duration-100 ease-in-out
+                            motion-reduce:transition-none motion-reduce:hover:underline motion-reduce:hover:tracking-normal
+                        "
+                        href={`/mycelithyl-hyphae/${p}`}
+                    >
+                        {p.charAt(0).toUpperCase() + p.slice(1)}
+                    </a>
+                </li>
+            ))}
         </menu>
     </nav>
 </aside>

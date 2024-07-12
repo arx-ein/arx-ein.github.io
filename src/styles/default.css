@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI",
+            Roboto, "BIZ UDPGothic", "Hiragino Sans", sans-serif,
+            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+            "Noto Sans Emoji";
+        font-size: 16px;
+        @apply text-zinc-800 dark:text-zinc-200 scroll-smooth;
+    }
+
+    code {
+        font-family:
+            Menlo,
+            Monaco,
+            Consolas,
+            Lucida Console,
+            Liberation Mono,
+            DejaVu Sans Mono,
+            Bitstream Vera Sans Mono,
+            Courier New,
+            monospace;
+    }
+
+    main {
+        article, .art {
+            @apply max-w-none prose dark:prose-invert prose-zinc prose-pre:text-wrap prose-a:anchor
+            prose-headings:text-lime-600 prose-headings:dark:text-green-500 prose-headings:leading-none
+            prose-li:leading-none
+        }
+    }
+
+    p {
+        @apply my-3;
+    }
+}
+
+@layer components {
+    .anchor {
+        @apply text-indigo-600 hover:text-indigo-400 active:text-lime-500 visited:text-fuchsia-700
+    }
+
+    astro-breadcrumbs {
+        a {
+            @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
+            dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400
+        }
+    }
+}
