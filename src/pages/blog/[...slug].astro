@@ -12,9 +12,20 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const hyphenDate = function(d: Date): String {
+    return d.toLocaleDateString("ja-JP", {year: "numeric", month: "2-digit", day: "2-digit"}).split("/").join("-")
+};
 ---
 
 <Main title={entry.data.title}>
+    <p class="text-xs text-zinc-400 text-right">
+        {
+            (entry.data.update == null) ? hyphenDate(entry.data.create) :
+            `Created: ${hyphenDate(entry.data.create)}` +
+            String.fromCodePoint(8195) +
+            `Updated: ${hyphenDate(entry.data.update)}`
+        }
+    </p>
     <article>
         <Content />
     </article>

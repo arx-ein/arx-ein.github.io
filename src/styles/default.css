@@ -29,9 +29,9 @@
 
     main {
         article, .art {
-            @apply max-w-none prose dark:prose-invert prose-zinc prose-pre:text-wrap prose-a:anchor
-            prose-headings:text-lime-600 prose-headings:dark:text-green-500 prose-headings:leading-none
-            prose-li:leading-none
+            @apply max-w-none prose dark:prose-invert prose-hyphae prose-pre:text-wrap prose-a:anchor
+            prose-headings:leading-none prose-li:leading-none
+            prose-h1:title-header prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4
         }
     }
 
@@ -42,7 +42,13 @@
 
 @layer components {
     .anchor {
-        @apply text-indigo-600 hover:text-indigo-400 active:text-lime-500 visited:text-fuchsia-700
+        @apply text-indigo-600 dark:text-indigo-500
+        hover:text-indigo-400 dark:hover:text-indigo-300
+        active:text-lime-500 visited:text-fuchsia-700
+    }
+
+    .title-header{
+        @apply text-center text-green-700 dark:text-lime-400 text-4xl my-6
     }
 
     astro-breadcrumbs {
