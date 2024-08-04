@@ -44,7 +44,8 @@
     .anchor {
         @apply text-indigo-600 dark:text-indigo-500
         hover:text-indigo-400 dark:hover:text-indigo-300
-        active:text-lime-500 visited:text-fuchsia-700
+        active:text-lime-500
+        visited:text-fuchsia-700 dark:visited:text-fuchsia-500
     }
 
     .title-header{

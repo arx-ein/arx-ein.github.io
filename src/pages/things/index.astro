@@ -1,7 +1,26 @@
 ---
 import Main from '@/layouts/Main.astro';
+import CardHex from '@/components/CardHex.astro';
 ---
 
-<Main title="Things">
-    <strong>Works</strong> are in progress.
+<Main title="Things" larger={true}>
+    <p class="text-center">作ったものたちです。ポートフォリオ未満</p>
+    <p class="text-center">Things that I made. Less than a potrfolio</p>
+    <ul id="card-grid" class="space-y-4 sm:grid sm:space-y-0 p-0 gap-y-4">
+        <CardHex
+            href="/mycelithyl-hyphae/things/music"
+            title="音鳴らし / Sound"
+            body="作った音楽をまとめてみた。試聴もできるよ<br />List of music I made. You can listen them here"
+        />
+        <CardHex
+            href="/mycelithyl-hyphae/things/icons"
+            title="六角柱アイコン / Myceli-icon"
+            body="まいせりしるきのアイコン総集編<br />All of my hexagonal prism icon thingy"
+        />
+    </ul>
 </Main>
+<style>
+    ul#card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    }
+</style>
