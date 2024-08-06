@@ -1,15 +1,15 @@
 ---
 import Header from '@/components/Header.astro'
+import Heading from '@/components/Heading.astro'
 import Sidebar from '@/components/Sidebar.astro'
 import Footer from '@/components/Footer.astro'
 import '@/styles/default.css'
-interface Props {
-    title: string;
-    caption?: string;
+import type { ComponentProps } from 'astro/types'
+interface Props extends ComponentProps<typeof Heading> {
     larger?: boolean;
 }
 
-const { title, caption, larger } = Astro.props;
+const { larger, title, caption, created, updated } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,19 +21,17 @@ const { title, caption, larger } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title} | mycelithyl-hyphae</title>
     </head>
-    <body class="h-svh dark:bg-zinc-900">
-        <Header></Header>
+    <body class="h-svh">
+        <Header />
         <div class="md:flex">
-            <Sidebar></Sidebar>
+            <Sidebar />
             <main class="flex flex-auto justify-center">
-                <div class={`w-full px-8 ${larger ? "max-w-screen-lg" : "max-w-screen-md"}`}>
-                    <h1 class="title-header">
-                        {(caption == undefined) ? title : caption}
-                    </h1>
+                <article class={`w-full px-8 ${larger ? "max-w-screen-lg" : "max-w-screen-md"}`}>
+                    <Heading title={title} caption={caption} created={created} updated={updated} />
                     <slot />
-                </div>
+                </article>
             </main>
         </div>
-        <Footer></Footer>
+        <Footer />
     </body>
 </html>

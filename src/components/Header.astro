@@ -1,24 +1,21 @@
 ---
 import { Breadcrumbs } from "astro-breadcrumbs";
-import "astro-breadcrumbs/breadcrumbs.scss";
+import "astro-breadcrumbs/breadcrumbs.css";
 interface Props {}
 ---
 
-<header class="border-0 border-b-2 border-b-zinc-800 dark:border-b-zinc-200">
-    <nav class="dark:bg-zinc-900 px-4 py-2 sm:py-4">
+<header class="border-0 border-b-2 border-b-fore dark:border-b-fore-dark">
+    <nav class="px-4 py-2 sm:py-4">
         <div class="flex flex-wrap justify-start items-center">
-            <a
-                href="/mycelithyl-hyphae/"
-                class="py-2 flex-none flex items-center group"
-            >
+            <a href="/mycelithyl-hyphae/" class="py-2 flex-none flex items-center group">
                 <svg
-                    class="h-8 sm:h-12 stroke-zinc-800 dark:stroke-zinc-200"
+                    class="h-8 sm:h-12 stroke-fore dark:stroke-fore-dark"
                     version="1.1"
                     viewBox="0 0 100 80"
                 >
                     <g
                         id="hex"
-                        transform="matrix(-1,0,0,1,72.738952,0)"
+                        transform="matrix(-1,0,0,1,72.7,0)"
                         style="
                             fill:none;
                             stroke-width:2.0;
@@ -58,36 +55,19 @@ interface Props {}
                             id="hypha-5"
                         >
                         </path>
-                        <path
-                            d="m 34.38,17.84 c -3.59,-1.38 -3.28,2.38 -2.51,4.14"
-                            id="branch-1"
-                        >
+                        <path d="m 34.38,17.84 c -3.59,-1.38 -3.28,2.38 -2.51,4.14" id="branch-1">
                         </path>
-                        <path
-                            d="M 46.14,30.42 C 44.66,26.85 40.89,25.31 43.52,22.22"
-                            id="branch-2"
-                        >
+                        <path d="M 46.14,30.42 C 44.66,26.85 40.89,25.31 43.52,22.22" id="branch-2">
                         </path>
-                        <path
-                            d="m 44.76,51.89 c -0.57,2.67 -3.28,2.38 -2.51,4.14"
-                            id="branch-4"
-                        >
+                        <path d="m 44.76,51.89 c -0.57,2.67 -3.28,2.38 -2.51,4.14" id="branch-4">
                         </path>
-                        <circle
-                            style="stroke-width:1.2;"
-                            id="spore"
-                            cy="57.70"
-                            cx="42.85"
-                            r="1.32"
-                        >
+                        <circle style="stroke-width:1.2;" id="spore" cy="57.70" cx="42.85" r="1.32">
                         </circle>
                     </g>
                     <g
                         id="arrow"
-                        class="
-                            transition-transform duration-200 group-hover:translate-x-3
-                            motion-reduce:transition-none motion-reduce:group-hover:transform-none
-                        "
+                        class="transition-transform duration-200 group-hover:translate-x-3
+                            motion-reduce:transition-none motion-reduce:group-hover:transform-none"
                         style="
                             display:inline;
                             fill:none;
@@ -99,16 +79,13 @@ interface Props {}
                         "
                     >
                         <path d="m 46.33,40 32.41,0" id="base"> </path>
-                        <path d="M 62.61,12.05 78.74,40 62.61,67.95" id="head">
-                        </path>
+                        <path d="M 62.61,12.05 78.74,40 62.61,67.95" id="head"> </path>
                     </g>
                 </svg>
                 <span
                     id="logo"
-                    class="
-                        self-center text-2xl sm:text-4xl leading-8 whitespace-nowrap
-                        motion-reduce:group-hover:underline
-                    "
+                    class="self-center text-2xl sm:text-4xl leading-8 whitespace-nowrap
+                        motion-reduce:group-hover:underline"
                     >mycelithyl-hyphae</span
                 >
             </a>
@@ -147,7 +124,7 @@ interface Props {}
 <style>
     @import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
     span#logo {
-        font-family: "La Belle Aurore", cursive;
+        font-family: "La Belle Aurore", "Segoe Script", "Zapfino", "Candara", serif;
         font-weight: 400;
         font-style: normal;
     }

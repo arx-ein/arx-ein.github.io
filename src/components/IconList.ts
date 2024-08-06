@@ -100,7 +100,7 @@ export const IconList: ImgGroup[] = [
             "2022春仕様", "今まで作った中でこの色味が一番大好き"
         ]},
         {path: "mycelithyl_clover", date: "2022-04-08", caption: [
-            "<a href='https://twitter.com/cm_ayf' class='anchor underline'>&#x1F331&#x1F33F&#x2618;&#x1F340氏</a>とのコラボ？"
+            "<a href='https://twitter.com/cm_ayf'>&#x1F331&#x1F33F&#x2618;&#x1F340氏</a>とのコラボ？"
         ]},
         {path: "mycelithyl_blur", date: "2022-04-13", caption: [
             "点描によるぼやけ", "気分がぐちゃぐちゃの時はアイコンもぐちゃぐちゃになりがち"
@@ -160,7 +160,7 @@ export const IconList: ImgGroup[] = [
             "8-bit柱"
         ]},
         {path: "mycelithyl_4koma_o", date: "2023-04-22", caption: [
-            "<a href='https://twitter.com/itototo1010' class='anchor underline'>いととと氏</a>とのコラボ？",
+            "<a href='https://twitter.com/itototo1010'>いととと氏</a>とのコラボ？",
             "「六角柱の4コマ」"
         ]},
         {path: "mycelithyl_golden", date: "2023-05-03", caption: [
@@ -174,7 +174,7 @@ export const IconList: ImgGroup[] = [
         ]},
         {path: "mycelithyl_teto1", date: "2024-01-29", caption: [
             "テトテリトリー宣伝用",
-            "出展したCD『鳴積霧』は<a href='/mycelithyl-hyphae/things/music' class='anchor underline'>音鳴らし</a>から聴けるよ！"
+            "出展したCD『鳴積霧』は<a href='/mycelithyl-hyphae/things/music'>音鳴らし</a>から聴けるよ！"
         ]},
     ]},
     {group: "角柱以外", dir: "not-hex", imgs: [
@@ -202,11 +202,11 @@ export const IconList: ImgGroup[] = [
     ]},
     {group: "いただきもの", dir: "given", imgs: [
         {path: "mycelithylman", ext: "jpg", date: "2022-03-30", caption: [
-            "<a href='https://twitter.com/41_36_22' class='anchor underline'>宇田氏</a>から",
+            "<a href='https://twitter.com/41_36_22'>宇田氏</a>から",
             "手足がある代理キャラが欲しい とか何とか言ったのがきっかけだったと思う"
         ]},
         {path: "mycelithyl_FAKE", date: "2022-04-27", caption: [
-            "<a href='https://twitter.com/41_36_22' class='anchor underline'>宇田氏</a>から その2",
+            "<a href='https://twitter.com/41_36_22'>宇田氏</a>から その2",
             "偽・六角柱。", "よく見ると五角柱になっている。細かい。"
         ]},
         {path: "mycelithyl_waso", ext:"jpg", date: "2022-07-24", caption: [

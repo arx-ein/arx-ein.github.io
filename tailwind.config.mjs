@@ -1,10 +1,34 @@
+const colors = require('tailwindcss/colors');
+const myColor = {
+    "fore": {
+        DEFAULT: colors.zinc[800],
+        "dim": colors.zinc[400],
+        "dark": colors.zinc[200]
+    },
+    "heading": {
+        DEFAULT: colors.lime[600],
+        "dark": colors.green[500]
+    },
+    "link": {
+        DEFAULT: colors.indigo[600],
+        "hover": colors.indigo[400],
+        "active": colors.lime[500],
+        "visited": colors.fuchsia[700],
+        "dark": {
+            DEFAULT: colors.indigo[500],
+            "hover": colors.indigo[300],
+            "active": colors.lime[500],
+            "visited": colors.fuchsia[500],
+        }
+    }
+}
 /** @type {import('tailwindcss').Config} */
 export default {
-    mode: "jit",
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
         extend: {
-            typography: (theme) => ({
+            colors: Object.create(myColor),
+            typography: {
                 DEFAULT: {
                     css: {
                         h5: {
@@ -33,45 +57,45 @@ export default {
                 },
                 hyphae: {
                     css: {
-                        "--tw-prose-body": theme("colors.zinc[700]"),
-                        "--tw-prose-headings": theme("colors.lime[600]"),
-                        "--tw-prose-lead": theme("colors.zinc[600]"),
-                        "--tw-prose-links": theme("colors.zinc[900]"),
-                        "--tw-prose-bold": theme("colors.zinc[900]"),
-                        "--tw-prose-counters": theme("colors.zinc[500]"),
-                        "--tw-prose-bullets": theme("colors.zinc[300]"),
-                        "--tw-prose-hr": theme("colors.zinc[200]"),
-                        "--tw-prose-quotes": theme("colors.zinc[900]"),
-                        "--tw-prose-quote-borders": theme("colors.zinc[200]"),
-                        "--tw-prose-captions": theme("colors.zinc[500]"),
-                        "--tw-prose-kbd": theme("colors.zinc[900]"),
-                        "--tw-prose-kbd-shadows": theme("colors.zinc[900])"),
-                        "--tw-prose-code": theme("colors.zinc[900]"),
-                        "--tw-prose-pre-code": theme("colors.zinc[200]"),
-                        "--tw-prose-pre-bg": theme("colors.zinc[800]"),
-                        "--tw-prose-th-borders": theme("colors.zinc[300]"),
-                        "--tw-prose-td-borders": theme("colors.zinc[200]"),
-                        "--tw-prose-invert-body": theme("colors.zinc[300]"),
-                        "--tw-prose-invert-headings": theme("colors.green[500]"),
-                        "--tw-prose-invert-lead": theme("colors.zinc[400]"),
-                        "--tw-prose-invert-links": theme("colors.white"),
-                        "--tw-prose-invert-bold": theme("colors.white"),
-                        "--tw-prose-invert-counters": theme("colors.zinc[400]"),
-                        "--tw-prose-invert-bullets": theme("colors.zinc[600]"),
-                        "--tw-prose-invert-hr": theme("colors.zinc[700]"),
-                        "--tw-prose-invert-quotes": theme("colors.zinc[100]"),
-                        "--tw-prose-invert-quote-borders": theme("colors.zinc[700]"),
-                        "--tw-prose-invert-captions": theme("colors.zinc[400]"),
-                        "--tw-prose-invert-kbd": theme("colors.white"),
-                        "--tw-prose-invert-kbd-shadows": theme("colors.white)"),
-                        "--tw-prose-invert-code": theme("colors.white"),
-                        "--tw-prose-invert-pre-code": theme("colors.zinc[300]"),
+                        "--tw-prose-body": colors.inherit,
+                        "--tw-prose-headings": myColor.heading.DEFAULT,
+                        "--tw-prose-lead": colors.zinc[600],
+                        "--tw-prose-links": colors.zinc[900],
+                        "--tw-prose-bold": colors.zinc[900],
+                        "--tw-prose-counters": colors.zinc[500],
+                        "--tw-prose-bullets": colors.zinc[300],
+                        "--tw-prose-hr": colors.zinc[200],
+                        "--tw-prose-quotes": colors.zinc[900],
+                        "--tw-prose-quote-borders": colors.zinc[200],
+                        "--tw-prose-captions": colors.zinc[500],
+                        "--tw-prose-kbd": colors.zinc[900],
+                        "--tw-prose-kbd-shadows": colors.zinc[900],
+                        "--tw-prose-code": colors.zinc[900],
+                        "--tw-prose-pre-code": colors.zinc[200],
+                        "--tw-prose-pre-bg": colors.zinc[800],
+                        "--tw-prose-th-borders": colors.zinc[300],
+                        "--tw-prose-td-borders": colors.zinc[200],
+                        "--tw-prose-invert-body": colors.inherit,
+                        "--tw-prose-invert-headings": myColor.heading.dark,
+                        "--tw-prose-invert-lead": colors.zinc[400],
+                        "--tw-prose-invert-links": colors.white,
+                        "--tw-prose-invert-bold": colors.white,
+                        "--tw-prose-invert-counters": colors.zinc[400],
+                        "--tw-prose-invert-bullets": colors.zinc[600],
+                        "--tw-prose-invert-hr": colors.zinc[700],
+                        "--tw-prose-invert-quotes": colors.zinc[100],
+                        "--tw-prose-invert-quote-borders": colors.zinc[700],
+                        "--tw-prose-invert-captions": colors.zinc[400],
+                        "--tw-prose-invert-kbd": colors.white,
+                        "--tw-prose-invert-kbd-shadows": colors.white,
+                        "--tw-prose-invert-code": colors.white,
+                        "--tw-prose-invert-pre-code": colors.zinc[300],
                         "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 50%)",
-                        "--tw-prose-invert-th-borders": theme("colors.zinc[600]"),
-                        "--tw-prose-invert-td-borders": theme("colors.zinc[700]"),
+                        "--tw-prose-invert-th-borders": colors.zinc[600],
+                        "--tw-prose-invert-td-borders": colors.zinc[700],
                     },
                 },
-            }),
+            },
         },
     },
     plugins: [require("@tailwindcss/typography")],

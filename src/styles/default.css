@@ -11,7 +11,11 @@
             "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
             "Noto Sans Emoji";
         font-size: 16px;
-        @apply text-zinc-800 dark:text-zinc-200 scroll-smooth;
+        @apply text-zinc-700 dark:text-zinc-300 scroll-smooth;
+    }
+
+    body {
+        @apply dark:bg-zinc-900
     }
 
     code {
@@ -28,10 +32,9 @@
     }
 
     main {
-        article, .art {
-            @apply max-w-none prose dark:prose-invert prose-hyphae prose-pre:text-wrap prose-a:anchor
-            prose-headings:leading-none prose-li:leading-none
-            prose-h1:title-header prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4
+        .matter {
+            @apply max-w-none prose dark:prose-invert prose-hyphae prose-a:anchor prose-pre:text-wrap
+            prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4
         }
     }
 
@@ -41,17 +44,12 @@
 }
 
 @layer components {
-    .anchor {
-        @apply text-indigo-600 dark:text-indigo-500
-        hover:text-indigo-400 dark:hover:text-indigo-300
-        active:text-lime-500
-        visited:text-fuchsia-700 dark:visited:text-fuchsia-500
+    .color-a a, .anchor {
+        @apply text-link dark:text-link-dark
+        hover:text-link-hover dark:hover:text-link-dark-hover
+        active:text-link-active
+        visited:text-link-visited dark:visited:text-link-dark-visited
     }
-
-    .title-header{
-        @apply text-center text-green-700 dark:text-lime-400 text-4xl my-6
-    }
-
     astro-breadcrumbs {
         a {
             @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
