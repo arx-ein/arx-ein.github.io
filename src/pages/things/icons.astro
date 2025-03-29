@@ -35,7 +35,7 @@ import { IconList } from "@/components/IconList";
                             (i.ext == undefined) ? "png" : i.ext
                         }`}
                         class="
-                            scale-95 hover:scale-100 transition-transform duration-75
+                            img-grid h-36 scale-95 hover:scale-100 transition-transform duration-75
                             motion-reduce:transition-none motion-reduce:scale-100
                         "
                     />
@@ -208,11 +208,16 @@ import { IconList } from "@/components/IconList";
 <script>
     const sizeInput = document.getElementsByName('size')[0] as HTMLInputElement;
     const gridElem = document.getElementsByClassName("card-grid")!;
+    const imgElem = document.getElementsByClassName('img-grid')!;
     sizeInput.addEventListener('input', () => {
         Array.from(gridElem).forEach(elem => {
-            const el = elem as HTMLUListElement
-            el.style.gridTemplateColumns = `repeat(auto-fit, ${sizeInput.value}rem)`;
-        })
+            const ul = elem as HTMLUListElement;
+            ul.style.gridTemplateColumns = `repeat(auto-fit, ${sizeInput.value}rem)`;
+        });
+        Array.from(imgElem).forEach(elem => {
+            const img = elem as HTMLImageElement;
+            img.style.height = `${sizeInput.value}rem`;
+        });
     });
     
     const foreInput = document.getElementsByName('forecolor')[0] as HTMLInputElement;
