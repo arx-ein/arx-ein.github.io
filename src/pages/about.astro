@@ -1,7 +1,139 @@
 ---
 import Main from '@/layouts/Main.astro';
+
+function getAge(birth: Date) {
+  const today = new Date();
+  const currentYearBirthday = new Date(today.getFullYear(), birth.getMonth(), birth.getDate());
+  return today.getFullYear() - birth.getFullYear() - ((today < currentYearBirthday) ? 1 : 0);
+}
 ---
 
-<Main title="About">
-    Work in progress.
+<Main title="About" created={new Date("2024-09-01")}>
+    <div class="matter">
+        <h2>Who</h2>
+        <h3>... am I?</h3>
+        <div class="md:flex">        
+            <p>
+                <strong>まいせりしるき</strong> と申します。<br />
+                お好きな愛称で呼んでください。<br />
+                アマチュア音楽家、大学生、怠惰な出不精。<br />
+            </p>
+            <p>
+                I call myself <strong>Mycelithyl</strong>.<br />
+                Call me whatever nickname you see fit.<br />
+                An amateur musician, college student, and lazy hermit.
+            </p>
+        </div>
+        <h3>... is "arx-ein"?</h3>
+        <div class="md:flex">
+            <p>
+                昔使っていた名義(ハンドルネーム)です。<br />
+                切り離そうとしていたこともあったけど、一度取ったIDを変えるのが面倒になってそのままにしています。<br />
+                もしかしたらその辺に当時繋がってたひとがいるかも！見てる～？
+            </p>
+            <p>
+                An username (handle) I used to go by.<br />
+                Have tried to entirely abandon the thing, but was bothered to change all the IDs and such, so here it is.<br />
+                Maybe someone out there recognizes me by it? Hello there!
+            </p>
+        </div>
+        <h2>When</h2>
+        <h3>... did I come to be?</h3>
+        <p>
+            2003年。現在{getAge(new Date(2003, 0, 23))}歳。
+        </p>
+        <h2>Where</h2>
+        <h3>... do I come from?</h3>
+        <div class="md:flex">
+            <p>
+                日本。山梨出身山梨育ち、大学から上京。
+            </p>
+            <p>
+                Japan. Born and raised in Yamanashi, moved to Tokyo for college.
+            </p>
+        </div>
+        <h2>What</h2>
+        <h3>... is this?</h3>
+        <div class="md:flex">
+            <p>
+                Mycelithylの個人サイトです。<br />
+                ちなみに"hyphae"は英語で「菌糸」という意味です。
+                菌糸がたくさん集まってできたものを「菌糸体」と呼び、英語では"mycelium"と言います。<br />
+                繋がってきたかな？
+            </p>
+            <p>
+                Personal website of Mycelithyl.<br />
+                "hyphae" is the plural form of hypha,
+                and a bunch of hyphae forms what's called a mycelium.<br />
+                ... see the connection?
+            </p>
+        </div>
+        <h3>... are my interests?</h3>
+        <div class="md:flex">
+            <p>
+                音楽(作曲/DTM、ピアノ、音楽理論)、化学、言語学。
+                ただし語学は別に好きじゃない(重要)。<br />
+                大学では生命工学を専攻しています。<br />
+                情報科学や数学もちょっと興味あり。構造や体系の対称性や"美しさ"が好物です。
+            </p>
+            <p>
+                Music (DTM, piano, music theory), chemistry, linguistics.
+                Not particularly fond of learning to use new languages, though.<br />
+                I major in bioengineering in college.<br />
+                A little curious about math and computer science.
+                Symmetry and "beauty" within structures and systems are my cup of tea.
+            </p>
+        </div>
+        <h2>Why</h2>
+        <h3>... did I make this?</h3>
+        <div class="md:flex">
+            <p>
+                活動の成果物とかを集積しておきたくなったから。<br />
+                それに、プロフィール欄に張るリンクがあると嬉しいからね。
+            </p>
+            <p>
+                To pile up some of the outcomes of my activities.<br />
+                Also, it's good to have a link that you can put on your profile.
+            </p>
+        </div>
+        <h2>How</h2>
+        <h3>... can you contact me?</h3>
+        <table class="not-prose color-a text-sm ml-4">
+            <tr>
+                <td>Misskey.io (ActivityPub):</td>
+                <td><a href="https://misskey.io/@mycelithyl" class="underline">@mycelithl@misskey.io</a></td>
+            </tr>
+            <tr>
+                <td>Bluesky (AT Protocol):</td>
+                <td><a href="https://bsky.app/profile/mycelithyl.bsky.social" class="underline">@mycelithyl.bsky.social</a></td>
+            </tr>
+            <tr>
+                <td>Twitter (&#x1D54F;):</td>
+                <td><a href="https://twitter.com/mycelithyl" class="underline">@mycelithyl</a></td>
+            </tr>
+            <tr>
+                <td>Discord:</td><td>mycelithyl</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><code>["arxein7", "@", "gmail.com"].join()</code></td>
+            </tr>
+        </table>
+        <div class="md:flex">
+            <p>
+                その他のリンクは<a href="/mycelithyl-hyphae/links">こちら</a>
+            </p>
+            <p>
+                For other links, see <a href="/mycelithyl-hyphae/links">links</a>
+            </p>
+        </div>
+    </div>
 </Main>
+<style>
+    div.md\:flex p {
+        @apply md:w-1/2 px-2;
+    }
+    td {
+        @apply px-4;
+    }
+</style>
