@@ -9,7 +9,8 @@ interface Props {}
         <div class="flex flex-wrap justify-start items-center">
             <a href="/mycelithyl-hyphae/" class="py-2 flex-none flex items-center group">
                 <svg
-                    class="h-8 sm:h-12 stroke-fore dark:stroke-fore-dark"
+                    class="h-8 sm:h-12 stroke-fore dark:stroke-fore-dark group-hover:stroke-fore-dim
+                        transition-colors duration-200 motion-reduce:transition-none"
                     version="1.1"
                     viewBox="0 0 100 80"
                 >
@@ -85,7 +86,7 @@ interface Props {}
                 <span
                     id="logo"
                     class="self-center text-2xl sm:text-4xl leading-8 whitespace-nowrap
-                        motion-reduce:group-hover:underline"
+                        group-hover:text-fore-dim transition-colors duration-200 motion-reduce:transition-none"
                     >mycelithyl-hyphae</span
                 >
             </a>

@@ -8,7 +8,7 @@ function getAge(birth: Date) {
 }
 ---
 
-<Main title="About" created={new Date("2024-09-01")}>
+<Main title="About" created={new Date("2024-09-01")} updated={new Date("2025-03-29")}>
     <div class="matter">
         <h2>Who</h2>
         <h3>... am I?</h3>
@@ -39,9 +39,14 @@ function getAge(birth: Date) {
         </div>
         <h2>When</h2>
         <h3>... did I come to be?</h3>
-        <p>
-            2003年。現在{getAge(new Date(2003, 0, 23))}歳。
-        </p>
+        <div class="md:flex">
+            <p>
+                2003年。現在{getAge(new Date(2003, 0, 23))}歳。
+            </p>
+            <p>
+                On 2003. Currently {getAge(new Date(2003, 0, 23))} years old.
+            </p>
+        </div>
         <h2>Where</h2>
         <h3>... do I come from?</h3>
         <div class="md:flex">
