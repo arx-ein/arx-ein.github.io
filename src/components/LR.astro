@@ -1,0 +1,13 @@
+<div class="md:flex">        
+    <div class="w-full">
+        <slot name="left" />
+    </div>
+    <div class="w-full">
+        <slot name="right" />
+    </div>
+</div>
+<style>
+    div.w-full {
+        @apply md:w-1/2 px-2;
+    }
+</style>
