@@ -1,40 +1,82 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap")
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@config '../../tailwind.config.mjs';
+
+@theme {
+    --color-fore: var(--color-zinc-800);
+    --color-fore-dim: var(--color-zinc-400);
+    --color-fore-dark: var(--color-zinc-200);
+    --color-heading: var(--color-lime-600);
+    --color-heading-dark: var(--color-green-500);
+    --color-link: var(--color-indigo-600);
+    --color-link-hover: var(--color-indigo-400);
+    --color-link-active: var(--color-lime-500);
+    --color-link-visited: var(--color-fuchsia-700);
+    --color-link-dark: var(--color-indigo-500);
+    --color-link-dark-hover: var(--color-indigo-300);
+    --color-link-dark-active: var(--color-lime-500);
+    --color-link-dark-visited: var(--color-fuchsia-500);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@utility color-a {
+    & a {
+        @apply text-link dark:text-link-dark
+        hover:text-link-hover dark:hover:text-link-dark-hover
+        active:text-link-active
+        visited:text-link-visited dark:visited:text-link-dark-visited;
+    }
+}
+
+@utility anchor {
+    @apply text-link dark:text-link-dark
+        hover:text-link-hover dark:hover:text-link-dark-hover
+        active:text-link-active
+        visited:text-link-visited dark:visited:text-link-dark-visited;
+}
 
 @layer base {
     html {
-        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI",
-            Roboto, "BIZ UDPGothic", "Hiragino Sans", sans-serif,
-            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-            "Noto Sans Emoji";
+        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI", Roboto,
+            "BIZ UDPGothic", "Hiragino Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol", "Noto Sans Emoji";
         font-size: 16px;
         @apply text-zinc-700 dark:text-zinc-300 scroll-smooth;
     }
 
     body {
-        @apply dark:bg-zinc-900
+        @apply dark:bg-zinc-900;
     }
 
     code {
-        font-family:
-            Menlo,
-            Monaco,
-            Consolas,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
+        font-family: Menlo, Monaco, Consolas, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+            Bitstream Vera Sans Mono, Courier New, monospace;
     }
 
     main {
         .matter {
             @apply max-w-none prose dark:prose-invert prose-hyphae prose-a:anchor prose-pre:text-wrap
-            prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4
+            prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4;
         }
     }
 
@@ -44,16 +86,10 @@
 }
 
 @layer components {
-    .color-a a, .anchor {
-        @apply text-link dark:text-link-dark
-        hover:text-link-hover dark:hover:text-link-dark-hover
-        active:text-link-active
-        visited:text-link-visited dark:visited:text-link-dark-visited
-    }
     astro-breadcrumbs {
         a {
             @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
-            dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400
+            dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400;
         }
     }
 }

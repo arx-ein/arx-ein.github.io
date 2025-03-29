@@ -26,7 +26,7 @@ const { larger, title, caption, created, updated } = Astro.props;
         <div class="md:flex">
             <Sidebar />
             <main class="flex flex-auto justify-center">
-                <article class={`w-full px-8 ${larger ? "max-w-screen-lg" : "max-w-screen-md"}`}>
+                <article class={`w-full px-8 ${larger ? "max-w-(--breakpoint-lg)" : "max-w-(--breakpoint-md)"}`}>
                     <Heading title={title} caption={caption} created={created} updated={updated} />
                     <slot />
                 </article>

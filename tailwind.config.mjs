@@ -1,33 +1,14 @@
 const colors = require('tailwindcss/colors');
 const myColor = {
-    "fore": {
-        DEFAULT: colors.zinc[800],
-        "dim": colors.zinc[400],
-        "dark": colors.zinc[200]
-    },
     "heading": {
         DEFAULT: colors.lime[600],
         "dark": colors.green[500]
     },
-    "link": {
-        DEFAULT: colors.indigo[600],
-        "hover": colors.indigo[400],
-        "active": colors.lime[500],
-        "visited": colors.fuchsia[700],
-        "dark": {
-            DEFAULT: colors.indigo[500],
-            "hover": colors.indigo[300],
-            "active": colors.lime[500],
-            "visited": colors.fuchsia[500],
-        }
-    }
 }
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
         extend: {
-            colors: Object.create(myColor),
             typography: {
                 DEFAULT: {
                     css: {
@@ -98,5 +79,4 @@ export default {
             },
         },
     },
-    plugins: [require("@tailwindcss/typography")],
 };
