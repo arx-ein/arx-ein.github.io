@@ -12,6 +12,6 @@ export default defineConfig({
     tailwindConfig: './tailwind.config.mjs',
   },
   redirects: {
-    "/mycelithyl-hyphae": "",
+    "/mycelithyl-hyphae": "/",
   },
 });
