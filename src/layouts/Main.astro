@@ -19,6 +19,13 @@ const { larger, title, caption, created, updated } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/hyphae-logo.svg" />
         <meta name="generator" content={Astro.generator} />
+        <script>
+            // Apply dark mode class immediately based on sessionStorage
+            if (sessionStorage.getItem("darkMode") === "on" || 
+                (sessionStorage.getItem("darkMode") === null && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                document.documentElement.classList.add("dark");
+            }
+        </script>
         <title>{((title == '') ? '' : title + ' | ') + 'mycelithyl-hyphae'}</title>
     </head>
     <body class="h-svh">

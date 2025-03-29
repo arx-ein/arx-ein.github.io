@@ -4,6 +4,7 @@ layer(base);
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @config '../../tailwind.config.mjs';
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     --color-fore: var(--color-zinc-800);
@@ -65,7 +66,7 @@ layer(base);
     }
 
     body {
-        @apply dark:bg-zinc-900;
+        @apply bg-zinc-50 dark:bg-zinc-900;
     }
 
     code {

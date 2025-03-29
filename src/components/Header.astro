@@ -119,6 +119,13 @@ interface Props {}
                     ))
                 }
             </ol> -->
+            <div class="flex-auto"></div>
+            <div class="flex-initial text-right select-none">
+                <label class="overflow-hidden cursor-pointer" for="lightswitch">
+                    light/dark
+                </label>
+                <input type="checkbox" class="" id="lightswitch" />
+            </div>
         </div>
     </nav>
 </header>
@@ -129,4 +136,48 @@ interface Props {}
         font-weight: 400;
         font-style: normal;
     }
+
+    /* .onoffswitch-checkbox {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    } */
 </style>
+<script>
+    const lightSwitch = document.getElementById("lightswitch")! as HTMLInputElement;
+    function darkModeOn() {
+        document.documentElement.classList.add("dark");
+        lightSwitch.checked = true;
+    }
+    function darkModeOff() {
+        document.documentElement.classList.remove("dark");
+        lightSwitch.checked = false;
+    }
+
+    const listener = (event: MediaQueryListEvent) => {
+        if (event.matches) {
+            darkModeOn();
+        } else {
+            darkModeOff();
+        }
+    };
+    const osDark = window.matchMedia("(prefers-color-scheme: dark)");
+    osDark.addEventListener("change", listener);
+    listener({ matches: osDark.matches, media: osDark.media } as MediaQueryListEvent);
+
+    lightSwitch.addEventListener("change", () => {
+        if (lightSwitch.checked) {
+            darkModeOn();
+            sessionStorage.setItem("darkMode", "on");
+        } else {
+            darkModeOff();
+            sessionStorage.setItem("darkMode", "off");
+        }
+    });
+
+    if (sessionStorage.getItem("darkMode") === "on") {
+        darkModeOn();
+    } else if (sessionStorage.getItem("darkMode") === "off") {
+        darkModeOff();
+    }
+</script>
