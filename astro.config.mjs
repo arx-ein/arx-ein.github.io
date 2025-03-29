@@ -12,4 +12,7 @@ export default defineConfig({
     // port: 3000
     tailwindConfig: './tailwind.config.mjs',
   },
+  redirects: {
+    "/mycelithyl-hyphae": "",
+  },
 });
