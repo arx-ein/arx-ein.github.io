@@ -174,7 +174,7 @@ export const IconList: ImgGroup[] = [
         ]},
         {path: "mycelithyl_teto1", date: "2024-01-29", caption: [
             "テトテリトリー宣伝用",
-            "出展したCD『鳴積霧』は<a href='/mycelithyl-hyphae/things/music'>音鳴らし</a>から聴けるよ！"
+            "出展したCD『鳴積霧』は<a href='/things/music'>音鳴らし</a>から聴けるよ！"
         ]},
     ]},
     {group: "角柱以外", dir: "not-hex", imgs: [

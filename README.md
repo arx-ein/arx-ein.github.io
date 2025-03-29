@@ -1,12 +1,12 @@
-# mycelithyl.github.io
+# mycelithyl-hyphae (arx-ein.github.io)
 
 ## What?
 
 Mycelithylの個人サイトです。  
-サイトへのアクセスは[こちら](https://arx-ein.github.io/mycelithyl-hyphae/)
+サイトへのアクセスは[こちら](https://arx-ein.github.io/)
 
 Personal website of Mycelithyl.  
-Access the site through [here](https://arx-ein.github.io/mycelithyl-hyphae/)
+Access the site through [here](https://arx-ein.github.io/)
 
 ## Who?
 
