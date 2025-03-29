@@ -2,16 +2,40 @@
 import Main from '@/layouts/Main.astro';
 ---
 
-<Main title="Links">
+<Main title="Links" updated={new Date("2025-03-29")}>
     <div class="matter">
-        <p>Until this site is ready, here's some other websites I'm on so you can contact me.</p>
+        <h2>Mycelithyl Links</h2>
+        <p>
+            各種リンク。コンタクトを取ったり、近況を把握したりすることができます。<br />
+            他にもあったかもしれないけど集めるのが面倒なので網羅的ではないです。随時更新。<br />
+            Some websites for you to contact me or to know what I'm up to.<br />
+            There might be more but I'm too lazy to make it exhaustive. Updated as needed.
+        </p>
         <ul>
-            <li><a href="https://misskey.io/@mycelithyl">Misskey.io</a></li>
-            <li><a href="https://bsky.app/profile/mycelithyl.bsky.social">bsky.social</a></li>
-            <li><a href="https://twitter.com/mycelithyl">Twitter (&#x1D54F;)</a></li>
-            <li><a href="https://note.com/mycelithyl">note.com</a></li>
-            <li><a href="https://mycelithyl.hateblo.jp/">mycelithyl-conidia</a> on <a href="https://hatena.blog/">Hatena Blog</a></li>
-            <li>Some others that I was too lazy to write for now</li>
+            <li>Timelines</li>
+            <ul>
+                <li><a href="https://bsky.app/profile/mycelithyl.bsky.social">bsky.social</a></li>
+                <li><a href="https://misskey.io/@mycelithyl">Misskey.io</a></li>
+                <li><a href="https://twitter.com/mycelithyl">Twitter (&#x1D54F;)</a></li>
+            </ul>
+            <li>Messages</li>
+            <ul>
+                <li>Discord: mycelithyl</li>
+                <li>Email: <code>["arxein7", "@", "gmail.com"].join()</code></li>
+            </ul>
+            <li>Blogs</li>
+            <ul>
+                <li><a href="https://note.com/mycelithyl">note.com</a></li>
+                <li><a href="https://mycelithyl.hateblo.jp/">mycelithyl-conidia</a> on <a href="https://hatena.blog/">Hatena Blog</a></li>
+            </ul>
+        </ul>
+        <h2>Mutual Links</h2>
+        <p>
+            相互リンク。知人の個人サイト等と互いのリンクを交換する古き良きインターネット文化。<br />
+            Mutual links between friends' personal websites. Good culture of Ye Olde days of Internet.
+        </p>
+        <ul>
+            <li><a href="https://comphand.pages.dev/">Comph-notes</a></li>
         </ul>
     </div>
 </Main>
