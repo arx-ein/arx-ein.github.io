@@ -18,5 +18,8 @@
     "astro-breadcrumbs": "^2.3.1",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "update-browserslist-db": "^1.1.3"
   }
 }
