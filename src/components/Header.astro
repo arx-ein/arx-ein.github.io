@@ -1,33 +1,25 @@
 ---
 import { Breadcrumbs } from "astro-breadcrumbs";
 import "astro-breadcrumbs/breadcrumbs.css";
-interface Props {}
 
 const SunPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 5.359 20Z";
 const MoonPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z";
 ---
-
 <header class="border-0 border-b-2 border-b-fore dark:border-b-fore-dark">
     <nav class="px-4 py-2 sm:py-4">
         <div class="flex flex-wrap justify-start items-center">
             <a href="/" class="py-2 flex-none flex items-center group">
                 <svg
                     class="h-8 sm:h-12 stroke-fore dark:stroke-fore-dark group-hover:stroke-fore-dim
-                        transition-colors duration-100 motion-reduce:transition-none"
-                    version="1.1"
+                        transition-colors duration-100 motion-reduce:transition-none fill-none"
+                    style="stroke-linecap:round;stroke-linejoin:round;"
                     viewBox="0 0 100 80"
                 >
                     <g
                         id="hex"
                         transform="matrix(-1,0,0,1,72.7,0)"
-                        style="
-                            fill:none;
-                            stroke-width:2.0;
-                            stroke-linecap:round;
-                            stroke-linejoin:round;
-                            stroke-dasharray:none;
-                            stroke-opacity:1
-                        "
+                        class="stroke-2"
+                        style="stroke-linecap:round;stroke-linejoin:round;"
                     >
                         <path
                             id="hexagon"
@@ -70,17 +62,8 @@ const MoonPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z";
                     </g>
                     <g
                         id="arrow"
-                        class="transition-transform duration-200 group-hover:translate-x-3
+                        class="transition-transform duration-200 group-hover:translate-x-3 inline stroke-[2.5]
                             motion-reduce:transition-none motion-reduce:group-hover:transform-none"
-                        style="
-                            display:inline;
-                            fill:none;
-                            stroke-width:2.5;
-                            stroke-linecap:round;
-                            stroke-linejoin:round;
-                            stroke-dasharray:none;
-                            stroke-opacity:1
-                        "
                     >
                         <path d="m 46.33,40 32.41,0" id="base"> </path>
                         <path d="M 62.61,12.05 78.74,40 62.61,67.95" id="head"> </path>
@@ -125,42 +108,30 @@ const MoonPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z";
             <div class="flex-auto"></div>
             <div class="flex-initial text-right select-none">
                 <div class="cursor-pointer" id="lightswitch">
-                    <svg viewBox="0 0 80 80"
+                    <svg
+                        viewBox="0 0 80 80"
                         class="h-7 sm:h-8 stroke-5 stroke-fore dark:stroke-fore-dark
                             text-transparent fill-current transition-colors duration-100
+                            motion-reduce:transition-none
                             hover:text-fore dark:hover:text-fore-dark"
                         style="stroke-linecap:round;stroke-linejoin:round;"
                     >
-                        <path d={SunPath} transform-origin="40 40" transform="scale(0.375)"
-                            class="stroke-2" vector-effect="non-scaling-stroke">
-                            {[
-                                {className: "anim-moon", d: MoonPath, transform: "0.9"},
-                                {className: "anim-sun", d: SunPath, transform: "0.375"}
-                            ].map((a) => (
-                                <animate
-                                    class={a.className} to={a.d} begin="indefinite" attributeName="d" dur="350ms"
-                                    fill="freeze" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.5 0.5; 0.6 1 1 1"
-                                />
-                                <animateTransform
-                                    class={a.className} to={a.transform} begin="indefinite"
-                                    attributeName="transform" dur="350ms" type="scale"
-                                    fill="freeze" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.4 0 0.5 0.5; 0.6 1 1 1"
-                                />
-                            ))}
-                        </path>
-                        <path id="ray" d="M40 4v12">
-                            {[{className: "anim-moon", to: 0}, {className: "anim-sun", to: 1}].map((a) => (
-                                <animate
-                                    class={a.className} to={a.to} begin="indefinite" attributeName="opacity" dur="350ms"
-                                    fill="freeze" calcMode="linear"
-                                />
-                            ))}
-                        </path>
-                        {  
-                            [60, 120, 180, 240, 300].map(angle => (
-                                <use href="#ray" transform=`rotate(${angle} 40 40)` />
-                            ))
-                        }
+                        <path
+                            id="outline"
+                            d={SunPath}
+                            transform-origin="40 40"
+                            transform="scale(0.375)"
+                            class="stroke-2 transition-[d,transform] ease-in-out duration-350 motion-reduce:transition-none"
+                            vector-effect="non-scaling-stroke"
+                        ></path>
+                        <g id="rays" class="opacity-100 transition-opacity ease-linear duration-350 motion-reduce:transition-none">
+                            <path id="ray" d="M40 4v12"></path>
+                            {
+                                [60, 120, 180, 240, 300].map((angle) => (
+                                    <use href="#ray" transform={`rotate(${angle} 40 40)`} />
+                                ))
+                            }
+                        </g>
                     </svg>
                 </div>
             </div>
@@ -174,42 +145,43 @@ const MoonPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z";
         font-weight: 400;
         font-style: normal;
     }
+    path#outline.night {
+        d: path("M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z"); /* MoonPath */
+        transform: scale(0.9);
+    }
+    g#rays.night {
+        opacity: 0;
+    }
 </style>
 <script>
-    const AnimMoon = document.getElementsByClassName("anim-moon") as HTMLCollectionOf<SVGAnimateElement> | null;
-    const AnimSun = document.getElementsByClassName("anim-sun") as HTMLCollectionOf<SVGAnimateElement> | null;
+    const OutLine = document.getElementById("outline") as SVGPathElement | null;
+    const Rays = document.getElementById("rays") as SVGGElement | null;
     const darkModeOff = () => {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove("dark");
         sessionStorage.setItem("darkMode", "off");
-        if (AnimSun) {
-            Array.from(AnimSun).forEach(element => {
-                const anim = element as SVGAnimateElement;
-                anim.beginElement();
-            });
-        }
-    }
+        [OutLine, Rays].forEach((elem) => {
+            elem?.classList.remove("night");
+        })
+    };
     const darkModeOn = () => {
-        document.documentElement.classList.add('dark');
+        document.documentElement.classList.add("dark");
         sessionStorage.setItem("darkMode", "on");
-        if (AnimMoon) {
-            Array.from(AnimMoon).forEach(element => {
-                const anim = element as SVGAnimateElement;
-                anim.beginElement();
-            });
-        }
-    }
+        [OutLine, Rays].forEach((elem) => {
+            elem?.classList.add("night");
+        })
+    };
     const toggleDarkMode = () => {
         if (sessionStorage.getItem("darkMode") === "on") {
             darkModeOff();
         } else if (sessionStorage.getItem("darkMode") === "off") {
             darkModeOn();
         }
-    }
+    };
 
     const lightSwitch = document.getElementById("lightswitch")!;
     lightSwitch.addEventListener("click", () => {
         toggleDarkMode();
-    })
+    });
 
     if (sessionStorage.getItem("darkMode") === "on") {
         darkModeOn();
