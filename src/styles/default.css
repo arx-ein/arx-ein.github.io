@@ -22,6 +22,13 @@ layer(base);
     --color-link-dark-visited: var(--color-fuchsia-500);
 }
 
+@utility prose-hyphae {
+    --tw-prose-body: inherit;
+    --tw-prose-invert-body: inherit;
+    --tw-prose-headings: var(--color-heading);
+    --tw-prose-invert-headings: var(--color-heading-dark);
+}
+
 @utility color-a {
     & a {
         @apply text-link dark:text-link-dark
@@ -58,7 +65,7 @@ layer(base);
 
     main {
         .matter {
-            @apply max-w-none prose dark:prose-invert prose-hyphae prose-a:anchor prose-pre:text-wrap
+            @apply max-w-none prose dark:prose-invert prose-zinc prose-hyphae prose-a:anchor prose-pre:text-wrap
             prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4;
         }
     }
@@ -68,11 +75,9 @@ layer(base);
     }
 }
 
-@layer components {
-    astro-breadcrumbs {
-        a {
-            @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
-            dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400;
-        }
+astro-breadcrumbs {
+    a {
+        @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
+        dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400;
     }
 }
