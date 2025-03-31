@@ -1,0 +1,13 @@
+---
+import { type HTMLAttributes } from 'astro/types';
+interface Props extends HTMLAttributes<'ul'> {};
+const { ...attrs } = Astro.props;
+---
+<ul class="space-y-4 sm:grid sm:space-y-0 p-0 gap-y-4" {...attrs}>
+    <slot />
+</ul>
+<style>
+    ul {
+        grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+    }
+</style>

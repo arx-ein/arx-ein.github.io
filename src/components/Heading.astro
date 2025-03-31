@@ -14,10 +14,10 @@ const hyphenDate = function(d: Date): String {
 ---
 
 <h1 class="text-center text-green-700 dark:text-lime-400 text-4xl mt-6 mb-0">
-    {(caption == undefined) ? title : caption}
+    {(caption) ? caption : title}
 </h1>
 <p class="text-xs text-fore-dim text-right mt-0">
-    { (created == null) ? "" : `作成日時 / Created: ${hyphenDate(created)}` }
-    { (created == null) || (updated == null) ? "" : <br /> }
-    { (updated == null) ? "" : `最終更新 / Updated: ${hyphenDate(updated)}` }
+    { (created) ? `作成日時 / Created: ${hyphenDate(created)}` : "" }
+    { (created && updated) ? <br /> : "" }
+    { (updated) ? `最終更新 / Updated: ${hyphenDate(updated)}` : "" }
 </p>
