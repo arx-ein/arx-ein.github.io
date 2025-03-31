@@ -1,30 +1,19 @@
 ---
 interface Props {
-    title: string;
-    body: string;
-    href: string;
     height?: number;
 }
 
-const { href, title, body, height } = Astro.props;
-const defHeight = height ? height : 36
+const { height } = Astro.props;
+const defHeight = height ? height : 36;
 ---
 
 <li	class="flex justify-center">
     <div id="content" class="
-        @container flex flex-auto peer transition-all hover:px-2
-        border-y-2 border-fore dark:border-fore-dark
-        motion-reduce:transition-none motion-reduce:hover:px-0
-        hover:border-indigo-800 dark:hover:border-indigo-200
+        flex flex-auto peer transition-all py-0 overflow-hidden
+        border-y-2 border-fore dark:border-fore-dark hover:border-emerald-500
+        px-1 hover:px-3 motion-reduce:transition-none motion-reduce:hover:px-1
     ">
-        <a href={href} class="flex-auto px-1 py-0 overflow-clip">
-            <h2 class="my-1 @xs:my-2 text-base @[12rem]:text-xl @xs:text-2xl text-center text-heading dark:text-heading-dark font-bold">
-                {title}
-            </h2>
-            <p class="m-0 text-sm @[15rem]:text-base leading-4 @[15rem]:leading-5" set:html={body}>
-                <slot />
-            </p>
-        </a>
+        <slot />
     </div>
     <div id="card-l" class="card-a translate-x-px ml-2 peer-hover:ml-0 motion-reduce:peer-hover:ml-2 -order-1"></div>
     <div id="card-r" class="card-a -translate-x-px mr-2 peer-hover:mr-0 motion-reduce:peer-hover:mr-2"></div>
@@ -34,13 +23,9 @@ const defHeight = height ? height : 36
     li {
         height: calc(var(--spacing) * var(--defHeight));
     }
-    li div:not(#content) {
-        @apply flex-none
-    }
-    div.card-a {
+    div#card-l, div#card-r {
         --width: 2px;
-        @apply aspect-2/7 h-full bg-fore dark:bg-fore-dark
-        peer-hover:bg-indigo-800 dark:peer-hover:bg-indigo-200
+        @apply flex-none aspect-2/7 h-full bg-fore dark:bg-fore-dark peer-hover:bg-emerald-500
         transition-all motion-reduce:transition-none motion-reduce:hover:px-0 
     }
     div#card-l {

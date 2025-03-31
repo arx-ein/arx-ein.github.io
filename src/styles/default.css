@@ -55,7 +55,7 @@ layer(base);
     }
 
     body {
-        @apply bg-zinc-50 dark:bg-zinc-900 transition-colors duration-100;
+        @apply bg-zinc-50 dark:bg-zinc-900 transition-colors;
     }
 
     code {
