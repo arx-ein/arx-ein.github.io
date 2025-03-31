@@ -6,15 +6,15 @@ const menus = ["about", "things", "blog", "links"];
 <aside class="flex-none">
     <menu class="flex flex-wrap justify-evenly md:block">
         {
-            menus.map((p) => (
+            menus.map((menuText, index, origArray) => (
                 <li class="inline-block md:list-item text-xl sm:text-2xl md:h-16 md:w-40 text-nowrap">
                     <svg
                         version="1.1"
-                        viewBox="0 0 800 800"
+                        viewBox={(index < origArray.length - 1) ? "0 0 800 800" : "0 0 800 810"}
                         xmlns="http://www.w3.org/2000/svg"
-                        class="hidden md:inline-block flex-none stroke-fore dark:stroke-fore-dark h-16 ml-2"
+                        class="hidden md:inline-block flex-none stroke-fore dark:stroke-fore-dark w-16 ml-2"
                     >
-                        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <g>
                             <g stroke-width="16">
                                 <path d="m400 0c-49.4 51.8 22.4 118 14.2 176-8.04 57.4-53.1 105-61.1 163-8.63 62.2-2.26 128 15.7 188 13.9 46.6 63.6 80 69.3 128 5.95 49.7 12.3 96.5-38.2 145" />
                                 <path d="m415 166c-27.8 153-185 5.42-213 188" />
@@ -34,9 +34,9 @@ const menus = ["about", "things", "blog", "links"];
                     <a
                         class="md:inline-block hover:tracking-widest transition-all duration-100
                         motion-reduce:transition-none motion-reduce:hover:underline motion-reduce:hover:tracking-normal"
-                        href={`/${p}`}
+                        href={`/${menuText}`}
                     >
-                        {p.charAt(0).toUpperCase() + p.slice(1)}
+                        {menuText.charAt(0).toUpperCase() + menuText.slice(1)}
                     </a>
                 </li>
             ))

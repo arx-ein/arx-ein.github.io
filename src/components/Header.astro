@@ -12,14 +12,12 @@ const MoonPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z";
                 <svg
                     class="h-8 sm:h-12 stroke-fore dark:stroke-fore-dark group-hover:stroke-fore-dim
                         transition-colors duration-100 motion-reduce:transition-none fill-none"
-                    style="stroke-linecap:round;stroke-linejoin:round;"
                     viewBox="0 0 100 80"
                 >
                     <g
                         id="hex"
                         transform="matrix(-1,0,0,1,72.7,0)"
                         class="stroke-2"
-                        style="stroke-linecap:round;stroke-linejoin:round;"
                     >
                         <path
                             id="hexagon"
@@ -83,11 +81,7 @@ const MoonPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z";
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    class="stroke-fore-dim stroke-2"
                 >
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
@@ -105,16 +99,15 @@ const MoonPath = "M40 0 74.641 20 74.641 60 40 80 5.359 60 40 40Z";
                     ))
                 }
             </ol> -->
-            <div class="flex-auto"></div>
-            <div class="flex-initial text-right select-none">
-                <div class="cursor-pointer" id="lightswitch">
+            <!-- <div class="flex-auto"></div> -->
+            <div class="flex-auto text-right select-none leading-0">
+                <div class="cursor-pointer inline-block" id="lightswitch">
                     <svg
                         viewBox="0 0 80 80"
                         class="h-7 sm:h-8 stroke-5 stroke-fore dark:stroke-fore-dark
                             text-transparent fill-current transition-colors duration-100
                             motion-reduce:transition-none
                             hover:text-fore dark:hover:text-fore-dark"
-                        style="stroke-linecap:round;stroke-linejoin:round;"
                     >
                         <path
                             id="outline"

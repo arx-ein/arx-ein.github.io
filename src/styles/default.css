@@ -73,6 +73,14 @@ layer(base);
     p {
         @apply my-3;
     }
+
+    svg {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: none;
+        stroke-opacity: 1;
+        fill: none;
+    }
 }
 
 astro-breadcrumbs {
