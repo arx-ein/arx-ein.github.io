@@ -1,10 +1,13 @@
 ---
 import Main from '@/layouts/Main.astro';
 import CardHex from '@/components/CardHex.astro';
+
+import { Image } from 'astro:assets';
+import ComphNotesBanner from '@/assets/comphnotes-banner.png';
 ---
 
 <Main title="Links" updated={new Date("2025-03-29")}>
-    <div class="matter">
+    <hgroup class="matter">
         <h2>Mycelithyl Links</h2>
         <p>
             各種リンク。コンタクトを取ったり、近況を把握したりすることができます。<br />
@@ -12,8 +15,8 @@ import CardHex from '@/components/CardHex.astro';
             Some websites for you to contact me or to know what I'm up to.<br />
             There might be more but I'm too lazy to make it exhaustive. Updated as needed.
         </p>
-    </div>
-    <ul id="link-list" class="space-y-1">
+    </hgroup>
+    <ul class="link-list space-y-1">
         <CardHex height={16}>
             <a class="text-[#1185FE]" href="https://bsky.app/profile/mycelithyl.bsky.social">
                 <div class="logo flex items-center">
@@ -90,9 +93,24 @@ import CardHex from '@/components/CardHex.astro';
             </a>
         </CardHex>
     </ul>
+    <hgroup class="matter">
+        <h2>Mutual Links</h2>
+            <p>
+                相互リンク。知人の個人サイト等と互いのリンクを交換する古き良きインターネット文化。<br />
+                Mutual links between friends' personal websites. Good culture of Ye Olde days of Internet.
+            </p>
+    </hgroup>
+    <ul class="link-list space-y-1">
+        <CardHex height={16}>
+            <a href="https://comphand.pages.dev/">
+                <Image src={ComphNotesBanner} alt="Comph-Notes Banner" class="banner" />
+                <div>by 外付け煮干</div>
+            </a>
+        </CardHex>
+    </ul>
 </Main>
 <style>
-ul#link-list{
+ul.link-list{
     @reference "tailwindcss";
     a{
         @apply flex m-0 text-base sm:text-xl text-wrap w-full h-full 
@@ -103,6 +121,9 @@ ul#link-list{
         svg path {
             @apply fill-current
         }
+    }
+    .banner {
+        @apply w-auto max-h-6 sm:max-h-10;
     }
     #x-twitter svg {
         @apply transition-transform group-hover:-translate-y-full
