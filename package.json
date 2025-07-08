@@ -11,15 +11,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.2.2",
+    "@astrojs/mdx": "^4.3.0",
     "@tailwindcss/typography": "^0.5.13",
     "@tailwindcss/vite": "^4.0.17",
-    "astro": "^5.5.5",
+    "astro": "^5.11.0",
     "astro-breadcrumbs": "^3.3.1",
     "tailwindcss": "^4.0.17",
     "typescript": "^5.5.3"
-  },
-  "devDependencies": {
-    "update-browserslist-db": "^1.1.3"
   }
 }
