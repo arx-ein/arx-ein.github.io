@@ -9,10 +9,12 @@ import type { ComponentProps } from 'astro/types'
 interface Props extends ComponentProps<typeof Heading> {
     larger?: boolean;
     url: typeof Astro.url;
+    desc?: string;
 }
 
-const { larger, url, title, caption, created, updated } = Astro.props;
+const { larger, url, desc, title, caption, created, updated } = Astro.props;
 const titleText = ((title == '') ? '' : (title + ' | ')) + 'mycelithyl-hyphae';
+const descText = desc ?? "まいせりしるきの個人サイト。Mycelithyl personal website."
 ---
 
 <!doctype html>
@@ -20,12 +22,14 @@ const titleText = ((title == '') ? '' : (title + ' | ')) + 'mycelithyl-hyphae';
     <head prefix="og: https://ogp.me/ns#">
         <meta charset="UTF-8" />
         <meta name="author" content="Mycelithyl" />
+        <meta name="description" content={descText} />
         <meta name="viewport" content="width=device-width" />
         <meta name="color-scheme" content="light dark" />
         <meta name="generator" content={Astro.generator} />
         <meta property="og:title" content={titleText} />
         <meta property="og:type" content={(title == "") ? "website" : "article"} />
         <meta property="og:url" content={url ?? Astro.site} />
+        <meta property="og:description" content={descText} />
         <meta property="og:image" content="/hyphae-ogp-img.png" />
         <meta property="og:site_name" content="mycelithyl-hyphae" />
         <meta property="og:locale" content="ja_JP" />
