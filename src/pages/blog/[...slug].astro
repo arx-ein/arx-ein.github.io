@@ -15,6 +15,7 @@ const { Content } = await entry.render();
 ---
 
 <Main
+    url={Astro.url}
     title={entry.data.title} caption={entry.data.caption ?? undefined}
     created={entry.data.create} updated={entry.data.update ?? undefined}
 >
