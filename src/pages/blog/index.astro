@@ -9,7 +9,7 @@ const blogEntries = await getCollection("blog");
     <ul class="list-disc marker:text-zinc-300 dark:marker:text-zinc-600">
         {blogEntries.map((entry) => (
             <li>
-                <a href={`/blog/${entry.id}`} class="anchor underline font-semibold text-lg">{entry.data.title}</a>&nbsp;:
+                <a href={`/blog/${entry.id}`} class="anchor underline font-bold text-xl">{entry.data.title}</a>&nbsp;:
                 <code>{entry.data.create.toISOString().split("T")[0]}</code><br />
                 <span class="inline-block text-sm pl-[1ex]">{entry.data.description}</span>
             </li>
