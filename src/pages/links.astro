@@ -4,9 +4,10 @@ import CardHex from '@/components/CardHex.astro';
 
 import { Image } from 'astro:assets';
 import ComphNotesBanner from '@/assets/comphnotes-banner.png';
+import GohyaBanner from '@/assets/500mL-banner.gif';
 ---
 
-<Main title="Links" updated={new Date("2025-04-20")}>
+<Main title="Links" updated={new Date("2025-07-08")}>
     <hgroup class="matter">
         <h2>Mycelithyl Links</h2>
         <p>
@@ -105,6 +106,12 @@ import ComphNotesBanner from '@/assets/comphnotes-banner.png';
             <a href="https://comphand.pages.dev/">
                 <Image src={ComphNotesBanner} alt="Comph-Notes Banner" class="banner" />
                 <div>by 外付け煮干</div>
+            </a>
+        </CardHex>
+        <CardHex height={16}>
+            <a href="https://500ml.moe/">
+                <Image src={GohyaBanner} alt="500mLのホームページ バナー" class="banner" />
+                <div>by 500mL</div>
             </a>
         </CardHex>
     </ul>
