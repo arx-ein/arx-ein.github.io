@@ -7,6 +7,7 @@
     --color-fore: var(--color-zinc-800);
     --color-fore-dim: var(--color-zinc-400);
     --color-fore-dark: var(--color-zinc-200);
+    --color-highlight: var(--color-emerald-500);
     --color-heading: var(--color-lime-600);
     --color-heading-dark: var(--color-green-500);
     --color-link: var(--color-indigo-600);
