@@ -10,7 +10,7 @@ const defHeight = height ? height : 36;
 <li	class="flex justify-center">
     <div id="content" class="
         flex flex-auto peer transition-all py-0 overflow-hidden
-        border-y-2 border-fore dark:border-fore-dark hover:border-emerald-500
+        border-y-2 border-fore dark:border-fore-dark hover:border-highlight
         px-1 hover:px-3 motion-reduce:transition-none motion-reduce:hover:px-1
     ">
         <slot />
@@ -25,7 +25,7 @@ const defHeight = height ? height : 36;
     }
     div#card-l, div#card-r {
         --width: 2px;
-        @apply flex-none aspect-2/7 h-full bg-fore dark:bg-fore-dark peer-hover:bg-emerald-500
+        @apply flex-none aspect-2/7 h-full bg-fore dark:bg-fore-dark peer-hover:bg-highlight
         transition-all motion-reduce:transition-none motion-reduce:hover:px-0 
     }
     div#card-l {
