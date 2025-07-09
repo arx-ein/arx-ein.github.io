@@ -1,0 +1,24 @@
+---
+import Main from '@/layouts/Main.astro';
+import LR from '@/components/LR.astro';
+---
+
+<Main url={Astro.url} desc="404 Not Found" title="404 Not Found" caption="404 Page Not Found.">
+    <div class="matter">
+        <p class="text-center">
+            お探しのページは見つかりませんでした。<br ./>
+            <a href="/">トップページに戻る / Back to homepage</a>
+        </p>
+        <hr />
+        <LR>
+            <Fragment slot="left">
+                リンク切れなど、こちらで対応できそうな問題の場合は
+                <a href="/links">ご一報</a> いただけると幸いです。
+            </Fragment>
+            <Fragment slot="right">
+                For those who came here via broken links or other problems fixable by me,
+                feel free to <a href="/links">inform me</a> about this situation.
+            </Fragment>
+        </LR>
+    </div>
+</Main>
