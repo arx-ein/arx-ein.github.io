@@ -4,7 +4,7 @@
 @import './font.css';
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
+@theme inline {
     --color-fore: var(--color-zinc-800);
     --color-fore-dim: var(--color-zinc-400);
     --color-fore-dark: var(--color-zinc-200);
