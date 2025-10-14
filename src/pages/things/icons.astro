@@ -152,7 +152,7 @@ import { IconList } from "@/components/IconList";
                 </g>
             </svg>
             <br />
-            <div id="ctn_gen" class="inline-flex w-64 justify-evenly">
+            <div id="cont_gen" class="inline-flex w-64 justify-evenly">
                 <div><input type="color" name="backcolor" value="#0094fc" /></div>
                 <div><input type="color" name="forecolor" value="#00f314" /></div>
                 <button name="reset">
@@ -183,15 +183,15 @@ import { IconList } from "@/components/IconList";
     ul.card-grid {
         grid-template-columns: repeat(auto-fit, 9rem);
     }
-    #ctn_gen > * {
+    #cont_gen > * {
         height: calc(3rem * 0.875);
         width: 3rem;
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
         @apply inline-block overflow-hidden scale-90 hover:scale-100
             transition-transform duration-100 motion-reduce:transition-none
     }
-    #ctn_gen button {
-        @apply bg-zinc-100 text-center;
+    #cont_gen button {
+        @apply bg-zinc-100 text-center cursor-pointer;
         svg {
             @apply inline size-6
         }
