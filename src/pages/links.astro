@@ -7,7 +7,7 @@ import ComphNotesBanner from '@/assets/comphnotes-banner.png';
 import GohyaBanner from '@/assets/500mL-banner.gif';
 ---
 
-<Main url={Astro.url} title="Links" updated={new Date("2025-07-14")}>
+<Main url={Astro.url} title="Links" updated={new Date("2025-12-13")}>
     <hgroup class="matter">
         <h2>Mycelithyl Links</h2>
         <p>
@@ -95,29 +95,35 @@ import GohyaBanner from '@/assets/500mL-banner.gif';
         </CardHex>
     </ul>
     <hgroup class="matter">
-        <h2>Mutual Links</h2>
-            <p>
-                相互リンク。知人の個人サイト等と互いのリンクを交換する古き良きインターネット文化。<br />
-                Mutual links between friends' personal websites. Good culture of Ye Olde days of Internet.
-            </p>
+        <h2>Mutual Links & Involvements</h2>
+        <p>
+            相互リンク他。知人の個人サイト等と互いのリンクを交換する古き良きインターネット文化。<br />
+            Mutual links et cetera. Good culture of Ye Olde days of Internet, exchanging links between friends' personal websites.
+        </p>
     </hgroup>
     <ul class="link-list space-y-1">
         <CardHex height={16}>
             <a href="https://comphand.pages.dev/">
                 <Image src={ComphNotesBanner} alt="Comph-Notes Banner" class="banner" />
-                <div>by 外付け煮干</div>
+                <div>- 外付け煮干</div>
             </a>
         </CardHex>
         <CardHex height={16}>
             <a href="https://500ml.moe/">
                 <Image src={GohyaBanner} alt="500mLのホームページ バナー" class="banner" />
-                <div>by 500mL</div>
+                <div>- 500mL</div>
             </a>
         </CardHex>
         <CardHex height={16}>
             <a href="https://charlotteace.github.io/">
                 <iframe src="https://charlotteace.github.io/parts/banner/" class="banner" />
-                <div>by 国際単位系</div>
+                <div>- 国際単位系</div>
+            </a>
+        </CardHex>
+        <CardHex height={16}>
+            <a href="https://gradierwerk.github.io">
+                <Image src="https://gradierwerk.github.io/banner.png" alt="Gradierwerk" class="banner" width={200} height={40} />
+                <div>- enden</div>
             </a>
         </CardHex>
     </ul>
