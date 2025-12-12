@@ -9,38 +9,33 @@ const defHeight = height ? height : 36;
 
 <li class="flex justify-center">
   <div
-    id="content"
-    class="flex flex-auto peer transition-all py-0 overflow-hidden
-        border-y-2 border-fore dark:border-fore-dark hover:border-highlight
-        px-1 hover:px-3 motion-reduce:transition-none motion-reduce:hover:px-1"
+    class="flex flex-auto peer transition-[border-color,padding] py-0 overflow-hidden
+      border-y-2 border-fore dark:border-fore-dark hover:border-highlight
+      px-1 hover:px-3 motion-reduce:transition-none motion-reduce:hover:px-1"
   >
     <slot />
   </div>
-  <div id="card-l" class="card-a translate-x-px ml-2 peer-hover:ml-0 motion-reduce:peer-hover:ml-2 -order-1"></div>
-  <div id="card-r" class="card-a -translate-x-px mr-2 peer-hover:mr-0 motion-reduce:peer-hover:mr-2"></div>
+  <svg viewBox="0 0 20 70" class="ml-2 peer-hover:ml-0 motion-reduce:peer-hover:ml-2 -order-1">
+    <path d="M 20,0 L 1,35 20,70"></path>
+  </svg>
+  <svg viewBox="0 0 20 70" class="mr-2 peer-hover:mr-0 motion-reduce:peer-hover:mr-2">
+    <path d="M 0,0 L 19,35 0,70"></path>
+  </svg>
 </li>
 <style define:vars={{defHeight}}>
   @reference "#default.css";
   li {
     height: calc(var(--spacing) * var(--defHeight));
+    > * {
+      @apply h-full
+    }
   }
-  div#card-l,
-  div#card-r {
-    --width: 2px;
-    @apply bg-fore dark:bg-fore-dark peer-hover:bg-highlight aspect-2/7 h-full flex-none
-      transition-all motion-reduce:transition-none motion-reduce:hover:px-0;
+  svg {
+    stroke-linecap: square;
+    @apply flex-none stroke-2 stroke-fore dark:stroke-fore-dark peer-hover:stroke-highlight
+      transition-[stroke,fill,margin] motion-reduce:transition-none motion-reduce:hover:px-0;
   }
-  div#card-l {
-    clip-path: polygon(
-      100% 0,
-      calc(100% - var(--width)) 0,
-      0 50%,
-      calc(100% - var(--width)) 100%,
-      100% 100%,
-      var(--width) 50%
-    );
-  }
-  div#card-r {
-    clip-path: polygon(0 0, var(--width) 0, 100% 50%, var(--width) 100%, 0 100%, calc(100% - var(--width)) 50%);
+  path {
+    vector-effect: non-scaling-stroke;
   }
 </style>
