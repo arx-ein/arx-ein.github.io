@@ -10,16 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.3.7",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/mdx": "^4.3.13",
     "@fontsource-variable/noto-sans": "^5.2.10",
     "@fontsource/la-belle-aurore": "^5.2.8",
     "@fontsource/macondo-swash-caps": "^5.2.8",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.14",
-    "astro": "^5.14.4",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.16.5",
     "astro-breadcrumbs": "^3.3.1",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
+  },
+  "imports": {
+    "#default.css": "./src/styles/default.css"
   }
 }
