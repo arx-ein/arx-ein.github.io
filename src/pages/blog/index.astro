@@ -1,8 +1,18 @@
 ---
+import { getCollection } from "astro:content";
 import Main from "@/layouts/Main.astro";
+
+const blogEntries = await getCollection("blog");
 ---
 
 <Main url={Astro.url} title="Blog">
-    Blog lists TBD.<br />
-    Random words for testing: <a href="/blog/lorem" class="anchor underline">Lorem Ipsum</a>
+    <ul class="list-disc marker:text-zinc-300 dark:marker:text-zinc-600">
+        {blogEntries.map((entry) => (
+            <li>
+                <a href={`/blog/${entry.id}`} class="anchor underline font-semibold">{entry.data.title}</a><br />
+                <code class="text-sm text-fore-dim">{entry.data.create.toISOString().split("T")[0]}</code>
+                <span class="inline-block text-sm">{entry.data.description}</span>
+            </li>
+        ))}
+    </ul>
 </Main>
