@@ -11,6 +11,9 @@ export default {
             "code::after": {
               content: "",
             },
+            "pre": {
+              borderRadius: "0.75rem",
+            },
           },
         },
       },

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@config '../../tailwind.config.mjs';
+@config "./tailwind.config.js";
 @import "./font.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -9,6 +9,7 @@
   --color-fore-dim: var(--color-zinc-400);
   --color-fore-dark: var(--color-zinc-200);
   --color-highlight: var(--color-emerald-500);
+  --color-selection: var(--color-green-200);
   --color-heading: var(--color-lime-600);
   --color-heading-dark: var(--color-green-500);
   --color-link: var(--color-indigo-600);
@@ -30,32 +31,27 @@
 
 @utility color-a {
   & a {
-    @apply text-link dark:text-link-dark
-      hover:text-link-hover dark:hover:text-link-dark-hover
-      active:text-link-active
-      visited:text-link-visited dark:visited:text-link-dark-visited;
+    @apply text-link dark:text-link-dark hover:text-link-hover dark:hover:text-link-dark-hover
+      active:text-link-active visited:text-link-visited dark:visited:text-link-dark-visited;
   }
 }
 
 @utility anchor {
-  @apply text-link dark:text-link-dark
-    hover:text-link-hover dark:hover:text-link-dark-hover
-    active:text-link-active
-    visited:text-link-visited dark:visited:text-link-dark-visited;
+  @apply text-link dark:text-link-dark hover:text-link-hover dark:hover:text-link-dark-hover
+    active:text-link-active visited:text-link-visited dark:visited:text-link-dark-visited;
 }
 
 @layer base {
   html {
     font-family:
-      -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI", Roboto,
-      "BIZ UDPGothic", "Hiragino Sans", sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+      -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI", Roboto, "BIZ UDPGothic", "Hiragino Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
     font-size: 16px;
-    @apply text-zinc-700 dark:text-zinc-300 scroll-smooth;
+    @apply scroll-smooth text-zinc-700 dark:text-zinc-300;
   }
 
   body {
-    @apply bg-zinc-50 dark:bg-zinc-900 transition-colors;
+    @apply selection:bg-selection dark:selection:text-fore bg-zinc-50 transition-colors dark:bg-zinc-900;
   }
 
   code {
@@ -71,10 +67,22 @@
       monospace;
   }
 
+  .astro-code,
+  .astro-code span {
+    @apply transition-colors dark:bg-(--shiki-dark-bg)! dark:text-(--shiki-dark)!;
+  }
+
+  .astro-code {
+    corner-shape: bevel;
+    @apply border-fore dark:border-fore-dark motion-safe:hover:border-highlight border;
+  }
+
   main {
     .matter {
-      @apply max-w-none prose dark:prose-invert prose-zinc prose-hyphae prose-a:anchor prose-pre:text-wrap
-        prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4;
+      @apply prose dark:prose-invert prose-zinc prose-hyphae prose-a:anchor prose-pre:text-wrap prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4 max-w-none;
+      a > span > svg {
+        @apply inline size-3 align-text-bottom;
+      }
     }
   }
 
@@ -93,7 +101,7 @@
 
 astro-breadcrumbs {
   a {
-    @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
-     dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400;
+    @apply text-emerald-700 visited:text-zinc-600 hover:text-emerald-500 active:text-lime-500
+      dark:text-emerald-300 dark:visited:text-zinc-400 dark:hover:text-emerald-200 dark:active:text-green-400;
   }
 }

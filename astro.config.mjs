@@ -1,18 +1,22 @@
 import {defineConfig} from "astro/config";
-// import tailwind from "@astrojs/tailwind";
 import tailwindcss from "@tailwindcss/vite";
-
 import mdx from "@astrojs/mdx";
+import rehypeExternalLinks from "rehype-external-links";
+import {fromHtml} from "hast-util-from-html";
+const extBoxSVG = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right'><path d='M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6'></path><path d='m21 3-9 9'></path><path d='M15 3h6v6'></path></svg>";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://arx-ein.github.io",
   vite: {
     plugins: [tailwindcss()],
   },
   integrations: [mdx()],
+  markdown: {
+    shikiConfig: {themes: {light: "one-light", dark: "houston"}},
+    rehypePlugins: [[rehypeExternalLinks, {content: fromHtml(extBoxSVG, {fragment: true, space: "svg"})}]],
+  },
   devOptions: {
-    // port: 3000
+    port: 4321,
     tailwindConfig: "./tailwind.config.mjs",
   },
   redirects: {
