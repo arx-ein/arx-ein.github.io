@@ -1,37 +1,39 @@
 ---
-import Main from '@/layouts/Main.astro';
-import CardGrid from '@/components/CardGrid.astro';
-import CardHex from '@/components/CardHex.astro';
+import Main from "@/layouts/Main.astro";
+import CardGrid from "@/components/CardGrid.astro";
+import CardHex from "@/components/CardHex.astro";
 
 const CardList = [
-    {
-        href: "/things/music",
-        title: "音鳴らし / Sound",
-        body: "作った音楽をまとめてみた。試聴もできるよ<br />List of music I made. You can listen them here"
-    },
-    {
-        href: "/things/icons",
-        title: "六角柱アイコン / Myceli-icon",
-        body: "まいせりしるきのアイコン総集編<br />All of my hexagonal prism icon thingy"
-    }
-]
+  {
+    href: "/things/music",
+    title: "音鳴らし / Sound",
+    body: "作った音楽をまとめてみた。試聴もできるよ<br />List of music I made. You can listen them here",
+  },
+  {
+    href: "/things/icons",
+    title: "六角柱アイコン / Myceli-icon",
+    body: "まいせりしるきのアイコン総集編<br />All of my hexagonal prism icon thingy",
+  },
+];
 ---
 
 <Main url={Astro.url} title="Things" larger={true}>
-    <p class="text-center">
-        作ったものたちです。ポートフォリオ未満<br />
-        Things that I made. Less than a portfolio
-    </p>
-    <CardGrid>
-        {CardList.map((c) => (
-            <CardHex>
-                <a href={c.href} class="@container block w-full">
-                    <h2 class="my-1 @xs:my-2 text-base @[12rem]:text-xl @xs:text-2xl text-center font-bold text-heading dark:text-heading-dark">
-                        {c.title}
-                    </h2>
-                    <p class="m-0 text-sm @[15rem]:text-base leading-4 @[15rem]:leading-5" set:html={c.body}></p>
-                </a>
-            </CardHex>
-        ))}
-    </CardGrid>
+  <p class="text-center">
+    作ったものたちです。ポートフォリオ未満<br />
+    Things that I made. Less than a portfolio
+  </p>
+  <CardGrid>
+    {
+      CardList.map((c) => (
+        <CardHex>
+          <a href={c.href} class="@container block w-full">
+            <h2 class="my-1 @xs:my-2 text-base @[12rem]:text-xl @xs:text-2xl text-center font-bold text-heading dark:text-heading-dark">
+              {c.title}
+            </h2>
+            <p class="m-0 text-sm @[15rem]:text-base leading-4 @[15rem]:leading-5" set:html={c.body} />
+          </a>
+        </CardHex>
+      ))
+    }
+  </CardGrid>
 </Main>

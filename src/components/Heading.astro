@@ -1,23 +1,23 @@
 ---
-import '@/styles/default.css'
+import "@/styles/default.css";
 interface Props {
-    title: string;
-    caption?: string;
-    created?: Date;
-    updated?: Date;
+  title: string;
+  caption?: string;
+  created?: Date;
+  updated?: Date;
 }
 
-const { title, caption, created, updated } = Astro.props;
-const hyphenDate = function(d: Date): String {
-    return d.toISOString().split("T")[0]
+const {title, caption, created, updated} = Astro.props;
+const hyphenDate = function (d: Date): String {
+  return d.toISOString().split("T")[0];
 };
 ---
 
 <h1 class="text-center text-green-700 dark:text-lime-400 text-4xl mt-6 mb-0">
-    {(caption) ? caption : title}
+  {caption ? caption : title}
 </h1>
 <p class="text-xs text-fore-dim text-right mt-0">
-    { (created) ? `作成日時 / Created: ${hyphenDate(created)}` : "" }
-    { (created && updated) ? <br /> : "" }
-    { (updated) ? `最終更新 / Updated: ${hyphenDate(updated)}` : "" }
+  {created ? `作成日時 / Created: ${hyphenDate(created)}` : ""}
+  {created && updated ? <br /> : ""}
+  {updated ? `最終更新 / Updated: ${hyphenDate(updated)}` : ""}
 </p>

@@ -1,25 +1,28 @@
 ---
-import { getCollection, render } from "astro:content";
+import {getCollection, render} from "astro:content";
 import Main from "@/layouts/Main.astro";
 
 export async function getStaticPaths() {
-    const blogEntries = await getCollection("blog");
-    return blogEntries.map((entry) => ({
-        params: { slug: entry.id },
-        props: { entry },
-    }));
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: {slug: entry.id},
+    props: {entry},
+  }));
 }
 
-const { entry } = Astro.props;
-const { Content } = await render(entry);
+const {entry} = Astro.props;
+const {Content} = await render(entry);
 ---
 
 <Main
-    url={Astro.url} desc={entry.data.description}
-    title={entry.data.title} caption={entry.data.caption ?? undefined}
-    created={entry.data.create} updated={entry.data.update ?? undefined}
+  url={Astro.url}
+  desc={entry.data.description}
+  title={entry.data.title}
+  caption={entry.data.caption ?? undefined}
+  created={entry.data.create}
+  updated={entry.data.update ?? undefined}
 >
-    <div class="matter">
-        <Content />
-    </div>
+  <div class="matter">
+    <Content />
+  </div>
 </Main>

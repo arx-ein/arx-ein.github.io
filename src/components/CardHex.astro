@@ -1,37 +1,46 @@
 ---
 interface Props {
-    height?: number;
+  height?: number;
 }
 
-const { height } = Astro.props;
+const {height} = Astro.props;
 const defHeight = height ? height : 36;
 ---
 
-<li	class="flex justify-center">
-    <div id="content" class="
-        flex flex-auto peer transition-all py-0 overflow-hidden
+<li class="flex justify-center">
+  <div
+    id="content"
+    class="flex flex-auto peer transition-all py-0 overflow-hidden
         border-y-2 border-fore dark:border-fore-dark hover:border-highlight
-        px-1 hover:px-3 motion-reduce:transition-none motion-reduce:hover:px-1
-    ">
-        <slot />
-    </div>
-    <div id="card-l" class="card-a translate-x-px ml-2 peer-hover:ml-0 motion-reduce:peer-hover:ml-2 -order-1"></div>
-    <div id="card-r" class="card-a -translate-x-px mr-2 peer-hover:mr-0 motion-reduce:peer-hover:mr-2"></div>
+        px-1 hover:px-3 motion-reduce:transition-none motion-reduce:hover:px-1"
+  >
+    <slot />
+  </div>
+  <div id="card-l" class="card-a translate-x-px ml-2 peer-hover:ml-0 motion-reduce:peer-hover:ml-2 -order-1"></div>
+  <div id="card-r" class="card-a -translate-x-px mr-2 peer-hover:mr-0 motion-reduce:peer-hover:mr-2"></div>
 </li>
 <style define:vars={{defHeight}}>
-    @reference "#default.css";
-    li {
-        height: calc(var(--spacing) * var(--defHeight));
-    }
-    div#card-l, div#card-r {
-        --width: 2px;
-        @apply flex-none aspect-2/7 h-full bg-fore dark:bg-fore-dark peer-hover:bg-highlight
-        transition-all motion-reduce:transition-none motion-reduce:hover:px-0 
-    }
-    div#card-l {
-        clip-path: polygon(100% 0, calc(100% - var(--width)) 0, 0 50%, calc(100% - var(--width)) 100%, 100% 100%, var(--width) 50%);
-    }
-    div#card-r {
-        clip-path: polygon(0 0, var(--width) 0, 100% 50%,var(--width) 100%, 0 100%, calc(100% - var(--width)) 50%);
-    }
+  @reference "#default.css";
+  li {
+    height: calc(var(--spacing) * var(--defHeight));
+  }
+  div#card-l,
+  div#card-r {
+    --width: 2px;
+    @apply bg-fore dark:bg-fore-dark peer-hover:bg-highlight aspect-2/7 h-full flex-none
+      transition-all motion-reduce:transition-none motion-reduce:hover:px-0;
+  }
+  div#card-l {
+    clip-path: polygon(
+      100% 0,
+      calc(100% - var(--width)) 0,
+      0 50%,
+      calc(100% - var(--width)) 100%,
+      100% 100%,
+      var(--width) 50%
+    );
+  }
+  div#card-r {
+    clip-path: polygon(0 0, var(--width) 0, 100% 50%, var(--width) 100%, 0 100%, calc(100% - var(--width)) 50%);
+  }
 </style>

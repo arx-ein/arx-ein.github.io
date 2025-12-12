@@ -9,6 +9,9 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "imports": {
+    "#default.css": "./src/styles/default.css"
+  },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
@@ -22,7 +25,8 @@
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
-  "imports": {
-    "#default.css": "./src/styles/default.css"
+  "devDependencies": {
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }

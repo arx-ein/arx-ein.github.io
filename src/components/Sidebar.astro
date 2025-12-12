@@ -1,53 +1,53 @@
 ---
-import '@fontsource/macondo-swash-caps';
+import "@fontsource/macondo-swash-caps";
 interface Props {}
 const menus = ["about", "things", "blog", "links"];
 ---
 
 <aside class="flex-none">
-    <menu class="flex flex-wrap justify-evenly md:block">
-        {
-            menus.map((menuText, index, origArray) => (
-                <li class="inline-block md:list-item text-xl sm:text-2xl md:h-16 md:w-40 text-nowrap">
-                    <svg
-                        version="1.1"
-                        viewBox={(index < origArray.length - 1) ? "0 0 800 800" : "0 0 800 810"}
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="hidden md:inline-block flex-none stroke-fore dark:stroke-fore-dark w-16 ml-2"
-                    >
-                        <g>
-                            <g stroke-width="16">
-                                <path d="m400 0c-49.4 51.8 22.4 118 14.2 176-8.04 57.4-53.1 105-61.1 163-8.63 62.2-2.26 128 15.7 188 13.9 46.6 63.6 80 69.3 128 5.95 49.7 12.3 96.5-38.2 145" />
-                                <path d="m415 166c-27.8 153-185 5.42-213 188" />
-                                <path d="m349 395c19.5 132 241 184 288 34.3" />
-                                <path d="m369 527c36.6 113-48.4 180-95.7 172" />
-                            </g>
-                            <ellipse
-                                cx="638"
-                                cy="400"
-                                rx="29.4"
-                                ry="29.4"
-                                stroke-width="16"
-                                style="paint-order:stroke markers fill"
-                            />
-                        </g>
-                    </svg>
-                    <a
-                        class="md:inline-block hover:tracking-widest transition-all duration-100 hover:text-highlight
-                        motion-reduce:transition-none motion-reduce:hover:underline motion-reduce:hover:tracking-normal"
-                        href={`/${menuText}`}
-                    >
-                        {menuText.charAt(0).toUpperCase() + menuText.slice(1)}
-                    </a>
-                </li>
-            ))
-        }
-    </menu>
+  <menu class="flex flex-wrap justify-evenly md:block">
+    {
+      menus.map((menuText, index, origArray) => (
+        <li class="inline-block md:list-item text-xl sm:text-2xl md:h-16 md:w-40 text-nowrap">
+          <svg
+            version="1.1"
+            viewBox={index < origArray.length - 1 ? "0 0 800 800" : "0 0 800 810"}
+            xmlns="http://www.w3.org/2000/svg"
+            class="hidden md:inline-block flex-none stroke-fore dark:stroke-fore-dark w-16 ml-2"
+          >
+            <g>
+              <g stroke-width="16">
+                <path d="m400 0c-49.4 51.8 22.4 118 14.2 176-8.04 57.4-53.1 105-61.1 163-8.63 62.2-2.26 128 15.7 188 13.9 46.6 63.6 80 69.3 128 5.95 49.7 12.3 96.5-38.2 145" />
+                <path d="m415 166c-27.8 153-185 5.42-213 188" />
+                <path d="m349 395c19.5 132 241 184 288 34.3" />
+                <path d="m369 527c36.6 113-48.4 180-95.7 172" />
+              </g>
+              <ellipse
+                cx="638"
+                cy="400"
+                rx="29.4"
+                ry="29.4"
+                stroke-width="16"
+                style="paint-order:stroke markers fill"
+              />
+            </g>
+          </svg>
+          <a
+            class="md:inline-block hover:tracking-widest transition-all duration-100 hover:text-highlight
+              motion-reduce:transition-none motion-reduce:hover:underline motion-reduce:hover:tracking-normal"
+            href={`/${menuText}`}
+          >
+            {menuText.charAt(0).toUpperCase() + menuText.slice(1)}
+          </a>
+        </li>
+      ))
+    }
+  </menu>
 </aside>
 <style>
-    aside {
-        font-family: "Macondo Swash Caps", "Segoe Print", "Chalkduster", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    }
+  aside {
+    font-family: "Macondo Swash Caps", "Segoe Print", "Chalkduster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 </style>

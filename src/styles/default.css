@@ -1,87 +1,99 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @config '../../tailwind.config.mjs';
-@import './font.css';
+@import "./font.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-    --color-fore: var(--color-zinc-800);
-    --color-fore-dim: var(--color-zinc-400);
-    --color-fore-dark: var(--color-zinc-200);
-    --color-highlight: var(--color-emerald-500);
-    --color-heading: var(--color-lime-600);
-    --color-heading-dark: var(--color-green-500);
-    --color-link: var(--color-indigo-600);
-    --color-link-hover: var(--color-indigo-400);
-    --color-link-active: var(--color-lime-500);
-    --color-link-visited: var(--color-fuchsia-700);
-    --color-link-dark: var(--color-indigo-500);
-    --color-link-dark-hover: var(--color-indigo-300);
-    --color-link-dark-active: var(--color-lime-500);
-    --color-link-dark-visited: var(--color-fuchsia-500);
+  --color-fore: var(--color-zinc-800);
+  --color-fore-dim: var(--color-zinc-400);
+  --color-fore-dark: var(--color-zinc-200);
+  --color-highlight: var(--color-emerald-500);
+  --color-heading: var(--color-lime-600);
+  --color-heading-dark: var(--color-green-500);
+  --color-link: var(--color-indigo-600);
+  --color-link-hover: var(--color-indigo-400);
+  --color-link-active: var(--color-lime-500);
+  --color-link-visited: var(--color-fuchsia-700);
+  --color-link-dark: var(--color-indigo-500);
+  --color-link-dark-hover: var(--color-indigo-300);
+  --color-link-dark-active: var(--color-lime-500);
+  --color-link-dark-visited: var(--color-fuchsia-500);
 }
 
 @utility prose-hyphae {
-    --tw-prose-body: inherit;
-    --tw-prose-invert-body: inherit;
-    --tw-prose-headings: var(--color-heading);
-    --tw-prose-invert-headings: var(--color-heading-dark);
+  --tw-prose-body: inherit;
+  --tw-prose-invert-body: inherit;
+  --tw-prose-headings: var(--color-heading);
+  --tw-prose-invert-headings: var(--color-heading-dark);
 }
 
 @utility color-a {
-    & a {
-        @apply text-link dark:text-link-dark
-        hover:text-link-hover dark:hover:text-link-dark-hover
-        active:text-link-active
-        visited:text-link-visited dark:visited:text-link-dark-visited;
-    }
+  & a {
+    @apply text-link dark:text-link-dark
+      hover:text-link-hover dark:hover:text-link-dark-hover
+      active:text-link-active
+      visited:text-link-visited dark:visited:text-link-dark-visited;
+  }
 }
 
 @utility anchor {
-    @apply text-link dark:text-link-dark
-        hover:text-link-hover dark:hover:text-link-dark-hover
-        active:text-link-active
-        visited:text-link-visited dark:visited:text-link-dark-visited;
+  @apply text-link dark:text-link-dark
+    hover:text-link-hover dark:hover:text-link-dark-hover
+    active:text-link-active
+    visited:text-link-visited dark:visited:text-link-dark-visited;
 }
 
 @layer base {
-    html {
-        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI", Roboto, "BIZ UDPGothic", "Hiragino Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
-        font-size: 16px;
-        @apply text-zinc-700 dark:text-zinc-300 scroll-smooth;
-    }
+  html {
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Noto Sans", "Segoe UI", Roboto,
+      "BIZ UDPGothic", "Hiragino Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+    font-size: 16px;
+    @apply text-zinc-700 dark:text-zinc-300 scroll-smooth;
+  }
 
-    body {
-        @apply bg-zinc-50 dark:bg-zinc-900 transition-colors;
-    }
+  body {
+    @apply bg-zinc-50 dark:bg-zinc-900 transition-colors;
+  }
 
-    code {
-        font-family: Menlo, Monaco, Consolas, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-    }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Consolas,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 
-    main {
-        .matter {
-            @apply max-w-none prose dark:prose-invert prose-zinc prose-hyphae prose-a:anchor prose-pre:text-wrap
-            prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4;
-        }
+  main {
+    .matter {
+      @apply max-w-none prose dark:prose-invert prose-zinc prose-hyphae prose-a:anchor prose-pre:text-wrap
+        prose-headings:leading-none prose-li:leading-none prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-4;
     }
+  }
 
-    p {
-        @apply my-3;
-    }
+  p {
+    @apply my-3;
+  }
 
-    svg {
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: none;
-        stroke-opacity: 1;
-        fill: none;
-    }
+  svg {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+    fill: none;
+  }
 }
 
 astro-breadcrumbs {
-    a {
-        @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
-        dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400;
-    }
+  a {
+    @apply text-emerald-700 hover:text-emerald-500 active:text-lime-500 visited:text-zinc-600
+     dark:text-emerald-300 dark:hover:text-emerald-200 dark:active:text-green-400 dark:visited:text-zinc-400;
+  }
 }

@@ -1,36 +1,30 @@
 ---
-import Main from '@/layouts/Main.astro';
-import LR from '@/components/LR.astro';
+import Main from "@/layouts/Main.astro";
+import LR from "@/components/LR.astro";
 ---
 
-<Main url={Astro.url} title="" caption='Welcome, cell(s).'>
-    <div class="matter">
-        <p class="text-center">
-            ようこそ、細胞 或いは 細胞群。
-        </p>
-        <LR>
-            <Fragment slot="left">
-                <p>
-                    まいせりしるき の個人サイトです。
-                </p>
-                <ul>
-                    <li>自己紹介: <a href="about">About</a></li>
-                    <li>作ったもの: <a href="things">Things</a></li>
-                    <li>書きもの: <a href="blog">Blog</a></li>
-                    <li>リンク集: <a href="links">Links</a></li>
-                </ul>
-            </Fragment>
-            <Fragment slot="right">
-                <p>
-                    Personal website of me, Mycelithyl.
-                </p>
-                <ul>
-                    <li><a href="about">About</a> me</li>
-                    <li><a href="things">Things</a> I made</li>
-                    <li><a href="blog">Blog</a> I wrote</li>
-                    <li><a href="links">Links</a> to contact me</li>
-                </ul>
-            </Fragment>
-        </LR>
-    </div>
+<Main url={Astro.url} title="" caption="Welcome, cell(s).">
+  <div class="matter">
+    <p class="text-center">ようこそ、細胞 或いは 細胞群。</p>
+    <LR>
+      <Fragment slot="left">
+        <p>まいせりしるき の個人サイトです。</p>
+        <ul>
+          <li>自己紹介: <a href="about">About</a></li>
+          <li>作ったもの: <a href="things">Things</a></li>
+          <li>書きもの: <a href="blog">Blog</a></li>
+          <li>リンク集: <a href="links">Links</a></li>
+        </ul>
+      </Fragment>
+      <Fragment slot="right">
+        <p>Personal website of me, Mycelithyl.</p>
+        <ul>
+          <li><a href="about">About</a> me</li>
+          <li><a href="things">Things</a> I made</li>
+          <li><a href="blog">Blog</a> I wrote</li>
+          <li><a href="links">Links</a> to contact me</li>
+        </ul>
+      </Fragment>
+    </LR>
+  </div>
 </Main>

@@ -1,14 +1,14 @@
-<div class="md:flex">        
-    <div class="w-full">
-        <slot name="left" />
-    </div>
-    <div class="w-full">
-        <slot name="right" />
-    </div>
+<div class="md:flex">
+  <div class="w-full">
+    <slot name="left" />
+  </div>
+  <div class="w-full">
+    <slot name="right" />
+  </div>
 </div>
 <style>
-    @reference "tailwindcss";
-    div.w-full {
-        @apply md:w-1/2 px-2;
-    }
+  @reference "tailwindcss";
+  div.w-full {
+    @apply px-2 md:w-1/2;
+  }
 </style>
