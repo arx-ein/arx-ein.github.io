@@ -20,8 +20,8 @@
     "@fontsource/macondo-swash-caps": "^5.2.8",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.5",
-    "astro-breadcrumbs": "^3.3.1",
+    "astro": "^5.16.11",
+    "astro-breadcrumbs": "^3.3.3",
     "rehype-external-links": "^3.0.0",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
