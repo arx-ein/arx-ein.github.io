@@ -50,7 +50,7 @@ const descText = desc ?? "まいせりしるきの個人サイト。Mycelithyl p
     <div class="md:flex">
       <Sidebar />
       <main class="flex flex-auto justify-center">
-        <article class={`w-full px-8 ${larger ? "max-w-(--breakpoint-lg)" : "max-w-(--breakpoint-md)"}`}>
+        <article class={`w-full px-6 xs:px-8 ${larger ? "max-w-(--breakpoint-lg)" : "max-w-(--breakpoint-md)"}`}>
           <Heading title={title} caption={caption} created={created} updated={updated} />
           <slot />
         </article>

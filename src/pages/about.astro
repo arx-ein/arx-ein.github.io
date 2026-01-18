@@ -9,7 +9,7 @@ function getAge(birth: Date) {
 }
 ---
 
-<Main url={Astro.url} title="About" created={new Date("2024-09-01")} updated={new Date("2025-07-08")}>
+<Main url={Astro.url} title="About" created={new Date("2024-09-01")} updated={new Date("2026-01-18")}>
   <div class="matter">
     <h2>Who</h2>
     <h3>... am I?</h3>
@@ -72,16 +72,14 @@ function getAge(birth: Date) {
     <h3>... are my interests?</h3>
     <LR>
       <p slot="left">
-        音楽(作曲/DTM、ピアノ、音楽理論)、化学、言語学。 ただし語学は別に好きじゃない(重要)。<br />
+        音楽(作曲/DTM、ピアノ、音楽理論)、化学、言語学。<br />
         大学では生命工学を専攻しています。<br />
-        情報科学や数学もちょっと興味あり。構造や体系の対称性や"美しさ"が好物です。
+        情報科学や数学もやや興味あり。
       </p>
       <p slot="right">
-        Music (music production, piano, music theory), chemistry, linguistics.
-        Not particularly fond of learning to use new languages, though.<br />
+        Music (music production, piano, music theory), chemistry, linguistics.<br />
         I major in bioengineering in college.<br />
         A little curious about math and computer science.
-        Symmetry and "beauty" within structures and systems are my cup of tea.
       </p>
     </LR>
     <h2>Why</h2>
@@ -98,13 +96,13 @@ function getAge(birth: Date) {
     </LR>
     <h2>How</h2>
     <h3>... can you contact me?</h3>
-    <table class="not-prose color-a text-sm ml-4">
+    <table class="not-prose color-a text-sm ml-3">
       <tr>
-        <td>Bluesky (AT Protocol):</td>
+        <td>Bluesky:</td>
         <td><a href="https://bsky.app/profile/mycelithyl.bsky.social" class="underline">@mycelithyl.bsky.social</a></td>
       </tr>
       <tr>
-        <td>Misskey.io (ActivityPub):</td>
+        <td>Misskey.io:</td>
         <td><a href="https://misskey.io/@mycelithyl" class="underline">@mycelithyl@misskey.io</a></td>
       </tr>
       <tr>
@@ -116,7 +114,7 @@ function getAge(birth: Date) {
       </tr>
       <tr>
         <td>Email:</td>
-        <td><code>["arxein7", "@", "gmail.com"].join()</code></td>
+        <td><code>["arxein7", "@", "gmail.com"]<wbr />.join()</code></td>
       </tr>
     </table>
     <LR>
@@ -132,6 +130,6 @@ function getAge(birth: Date) {
 <style>
   @reference "tailwindcss";
   td {
-    @apply px-4;
+    @apply align-baseline py-1 first:text-nowrap not-first:pl-2 sm:not-first:pl-4 not-first:wrap-break-word;
   }
 </style>

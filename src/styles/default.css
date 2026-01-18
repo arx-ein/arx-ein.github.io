@@ -20,6 +20,7 @@
   --color-link-dark-hover: var(--color-indigo-300);
   --color-link-dark-active: var(--color-lime-500);
   --color-link-dark-visited: var(--color-fuchsia-500);
+  --breakpoint-xs: 32rem;
 }
 
 @utility prose-hyphae {

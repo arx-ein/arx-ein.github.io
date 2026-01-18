@@ -16,8 +16,8 @@ const hyphenDate = function (d: Date): String {
 <h1 class="text-center text-green-700 dark:text-lime-400 text-4xl mt-6 mb-0">
   {caption ? caption : title}
 </h1>
-<p class="text-xs text-fore-dim text-right mt-0">
-  {created ? `作成日時 / Created: ${hyphenDate(created)}` : ""}
+<p class="text-xs text-fore-dim text-right sm:mt-0">
+  {created ? <>作成日時 / Created: <code>{hyphenDate(created)}</code></> : ""}
   {created && updated ? <br /> : ""}
-  {updated ? `最終更新 / Updated: ${hyphenDate(updated)}` : ""}
+  {updated ? <>最終更新 / Updated: <code>{hyphenDate(updated)}</code></> : ""}
 </p>
